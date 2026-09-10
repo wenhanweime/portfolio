@@ -1,4 +1,4 @@
-import AnimatedMark from "./AnimatedMark";
+import Avatar from "./Avatar";
 import { useLang } from "../hooks/useLang";
 
 function GithubIcon() {
@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section className="lg:sticky lg:top-8">
       <div className="flex items-start gap-5 mb-7">
-        <AnimatedMark size={72} label={t.hero.name} />
+        <Avatar size={88} label={t.hero.name} />
         <div className="min-w-0 pt-1">
           <p className="section-kicker mb-2">{t.hero.role}</p>
           <h1 className="font-display text-[2.35rem] sm:text-[2.75rem] leading-[0.95] font-extrabold tracking-tight text-ink">

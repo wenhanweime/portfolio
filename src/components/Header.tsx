@@ -1,4 +1,4 @@
-import AnimatedMark from "./AnimatedMark";
+import Avatar from "./Avatar";
 import { useLang } from "../hooks/useLang";
 
 export default function Header() {
@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between gap-4 border-b border-line pb-5">
       <div className="flex items-center gap-3 min-w-0">
-        <AnimatedMark size={28} label="Peter" />
+        <Avatar size={28} label="Peter" className="avatar-mark--header" />
         <span className="font-display text-[15px] font-bold tracking-tight text-ink">
           peter
         </span>
