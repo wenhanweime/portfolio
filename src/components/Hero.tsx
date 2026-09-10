@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import AnimatedMark from "./AnimatedMark";
 import { useLang } from "../hooks/useLang";
 
 function GithubIcon() {
@@ -13,57 +13,40 @@ export default function Hero() {
   const { t } = useLang();
 
   return (
-    <section className="pt-9 pb-2">
-      <div className="flex items-center gap-5 mb-6">
-        <motion.img
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          src="/avatar.png"
-          alt={t.hero.name}
-          width={64}
-          height={64}
-          className="w-16 h-16 rounded-full object-cover ring-1 ring-border-strong/70 paper-shadow-sm shrink-0"
-        />
-        <div className="min-w-0">
-          <h1 className="font-serif text-[1.65rem] sm:text-[1.85rem] font-medium tracking-tight leading-none text-text">
+    <section className="lg:sticky lg:top-8">
+      <div className="flex items-start gap-5 mb-7">
+        <AnimatedMark size={72} label={t.hero.name} />
+        <div className="min-w-0 pt-1">
+          <p className="section-kicker mb-2">{t.hero.role}</p>
+          <h1 className="font-display text-[2.35rem] sm:text-[2.75rem] leading-[0.95] font-extrabold tracking-tight text-ink">
             {t.hero.name}
           </h1>
-          <p className="mt-2 text-[12px] text-text-muted font-mono tracking-wide">
-            {t.hero.role}
-          </p>
-          <div className="flex items-center gap-1.5 mt-2.5">
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-bg/80 text-text-muted ring-1 ring-border">
-              PKU
-            </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-bg/80 text-text-muted ring-1 ring-border">
-              SCUT
-            </span>
-          </div>
         </div>
       </div>
 
-      <p className="text-[15px] text-text-secondary leading-[1.7] mb-6 max-w-lg">
+      <p className="text-[15px] sm:text-[16px] text-ink-dim leading-[1.75] max-w-md mb-6">
         {t.hero.bio}
       </p>
 
-      <div className="flex items-center gap-2.5 mb-9">
-        <a
-          href="https://github.com/wenhanweime"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 h-8 pl-2.5 pr-3 rounded-full bg-bg/70 ring-1 ring-border text-text-secondary hover:text-accent hover:ring-accent/30 transition-colors duration-200"
-        >
-          <GithubIcon />
-          <span className="text-[11px] font-mono tracking-wide">GitHub</span>
-        </a>
+      <div className="flex flex-wrap items-center gap-2 mb-8">
+        <span className="section-kicker px-2 py-1 border border-line">PKU</span>
+        <span className="section-kicker px-2 py-1 border border-line">SCUT</span>
       </div>
 
-      <div className="flex items-center gap-3">
-        <span className="w-1 h-1 rounded-full bg-accent" />
-        <span className="section-label">{t.projects.title}</span>
-        <span className="flex-1 h-px bg-border" />
-      </div>
+      <a
+        href="https://github.com/wenhanweime"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 h-9 px-3 border border-line-strong text-ink-dim hover:text-violet-soft hover:border-violet/50 transition-colors"
+      >
+        <GithubIcon />
+        <span className="text-[12px] font-mono tracking-wide">github.com/wenhanweime</span>
+      </a>
+
+      <div className="mt-10 signal-rule" />
+      <p className="mt-4 text-[13px] text-ink-mute leading-relaxed max-w-sm">
+        {t.hero.manifesto}
+      </p>
     </section>
   );
 }

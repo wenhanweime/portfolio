@@ -1,5 +1,4 @@
 import { useState, useCallback } from "react";
-import { motion } from "framer-motion";
 import { LangContext, getTranslations } from "./hooks/useLang";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -25,21 +24,18 @@ function App() {
     <LangContext.Provider
       value={{ lang, t: getTranslations(lang), toggleLang }}
     >
-      <div className="min-h-screen flex items-start justify-center py-10 sm:py-16 px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full max-w-2xl bg-paper rounded-2xl ring-1 ring-border paper-shadow overflow-hidden"
-        >
+      <div className="min-h-screen">
+        <div className="mx-auto w-full max-w-5xl px-5 sm:px-8 pt-6 pb-16">
           <Header />
-          <main className="px-6 sm:px-10 pb-12">
+          <main className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] gap-10 lg:gap-16 items-start">
             <Hero />
-            <ProjectList />
-            <WritingLinks />
+            <div className="min-w-0 space-y-12">
+              <ProjectList />
+              <WritingLinks />
+            </div>
           </main>
           <Footer />
-        </motion.div>
+        </div>
       </div>
     </LangContext.Provider>
   );

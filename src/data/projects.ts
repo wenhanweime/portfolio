@@ -2,7 +2,6 @@ export interface Project {
   id: string;
   name: { zh: string; en: string };
   category: { zh: string; en: string };
-  tagColor: string;
   description: { zh: string; en: string };
   techStack: string[];
   highlights: { zh: string[]; en: string[] };
@@ -15,10 +14,9 @@ export const projects: Project[] = [
     id: "staroracle",
     name: { zh: "星谕 StarOracle", en: "StarOracle" },
     category: { zh: "核心产品", en: "Product" },
-    tagColor: "#0f766e",
     description: {
-      zh: "星座互动产品：用星盘与 AI 对话探索自我。从 Web 原型起步，历经多轮架构迭代，覆盖 Web / iOS / Android，含完整用户系统与自研星盘可视化引擎。",
-      en: "An astrology product where star charts and AI dialogue help people explore themselves. Grown from a web prototype through multiple architecture iterations into Web, iOS, and Android — with a full user system and a proprietary chart engine.",
+      zh: "星座互动产品：用星盘与 AI 对话探索自我。从 Web 原型走到 Web / iOS / Android，自研星盘引擎与完整用户系统。",
+      en: "Astrology product pairing star charts with AI dialogue. From web prototype to Web / iOS / Android, with a proprietary chart engine and full user system.",
     },
     techStack: [
       "React",
@@ -47,10 +45,9 @@ export const projects: Project[] = [
     id: "mira",
     name: { zh: "MIRA", en: "MIRA" },
     category: { zh: "空间计算", en: "Spatial" },
-    tagColor: "#7c3aed",
     description: {
-      zh: "跑在 Apple Vision Pro 上的原生应用，探索空间计算如何改变人与数字内容的相处方式。用 Swift 从零构建，多轮迭代空间 UI、手势与 3D 渲染。",
-      en: "A native Apple Vision Pro app exploring how spatial computing changes interaction with digital content. Built from scratch in Swift, iterating on spatial UI, gesture, and 3D rendering.",
+      zh: "Apple Vision Pro 原生应用：用 Swift 从零探索空间 UI、手势与 3D 渲染，试空间计算如何改写交互。",
+      en: "Native Vision Pro app in Swift — spatial UI, gesture, and 3D rendering as a probe into how spatial computing changes interaction.",
     },
     techStack: ["Swift", "SwiftUI", "visionOS", "RealityKit"],
     highlights: {
@@ -71,10 +68,9 @@ export const projects: Project[] = [
     id: "herduck",
     name: { zh: "Herduck", en: "Herduck" },
     category: { zh: "AI Agent", en: "AI Agent" },
-    tagColor: "#b45309",
     description: {
-      zh: "面向 AI 编程代理的终端工作区：并排跑 agent、找回历史会话、按项目与主题继续。兼容 Claude Code、Codex、OpenCode、Pi 等既有 CLI。",
-      en: "A terminal workspace for AI coding agents — run agents side by side, find past conversations, and pick up by project or topic. Works with the CLIs you already use: Claude Code, Codex, OpenCode, Pi.",
+      zh: "面向 AI 编程代理的终端工作区：并排跑 agent、找回历史会话、按项目与主题继续。兼容 Claude Code、Codex、OpenCode、Pi。",
+      en: "Terminal workspace for AI coding agents — split panes, resume sessions, pick up by project or topic. Works with Claude Code, Codex, OpenCode, Pi.",
     },
     techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
     highlights: {
@@ -96,10 +92,9 @@ export const projects: Project[] = [
     id: "md2video",
     name: { zh: "md2video", en: "md2video" },
     category: { zh: "内容生产", en: "Content" },
-    tagColor: "#ea580c",
     description: {
-      zh: "专注写作，自动生成带配音、字幕与动画的视频。基于 Remotion，集成 TTS，把 Markdown 与视频制作之间的鸿沟收窄。",
-      en: "Write once; generate video with narration, subtitles, and motion. Built on Remotion with TTS — narrowing the gap between Markdown and finished video.",
+      zh: "专注写作，自动生成带配音、字幕与动画的视频。Remotion + TTS，把 Markdown 收成片。",
+      en: "Write Markdown; get narrated, subtitled, animated video. Remotion + TTS — text to cut.",
     },
     techStack: ["React", "Remotion", "TypeScript", "Edge TTS", "FFmpeg"],
     highlights: {
@@ -120,10 +115,9 @@ export const projects: Project[] = [
     id: "us-stock-daily",
     name: { zh: "美股投研", en: "US Stock Daily" },
     category: { zh: "研究工具", en: "Research" },
-    tagColor: "#0369a1",
     description: {
       zh: "把美股投研沉淀成可检索、可追踪、可复盘的研究终端。「每日观察」聚合 X 高赞讨论，「深度研究」沉淀个股与产业链。仅供研究，非投资建议。",
-      en: "A searchable research terminal for US equities — daily X digests plus deep dives on names and supply chains. For research only; not investment advice.",
+      en: "Searchable research terminal for US equities — daily X digests plus deep dives on names and supply chains. Research only; not advice.",
     },
     techStack: ["Automation", "Research", "GitHub Pages"],
     highlights: {
@@ -145,10 +139,9 @@ export const projects: Project[] = [
     id: "autopublish",
     name: { zh: "内容自动发布", en: "Content Automation" },
     category: { zh: "增长工具", en: "Growth" },
-    tagColor: "#059669",
     description: {
-      zh: "内容从制作到发布的自动化工具链。一次编辑，同步到多个平台，让创作者把时间留在内容本身。",
-      en: "An automation chain from drafting to publishing. Edit once, sync across platforms — so creators stay on the work, not the ops.",
+      zh: "内容从制作到发布的自动化工具链。一次编辑，同步多平台，把时间留在内容本身。",
+      en: "Draft-to-publish automation. Edit once, sync across platforms — leave the ops, keep the craft.",
     },
     techStack: ["Node.js", "Chrome Extension", "Shell"],
     highlights: {
