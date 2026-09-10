@@ -1,0 +1,71 @@
+/* logoanime mark — circle-bg #1e3a8a, white bars, gearRotate + slide */
+
+.animated-mark {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+}
+
+.animated-mark__disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #1e3a8a;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(30, 58, 138, 0.45);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.animated-mark__gear {
+  width: 58%;
+  height: 58%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 7%;
+  animation: gearRotate 14s linear infinite;
+  transform-origin: center center;
+}
+
+.animated-mark__bar {
+  display: block;
+  flex: 1 1 0;
+  max-width: 18%;
+  height: calc(var(--bar-h) * 100%);
+  border-radius: 999px;
+  background: #ffffff;
+  transform-origin: center bottom;
+  animation: slide 1.8s ease-in-out infinite;
+  animation-delay: calc(var(--bar-i) * -0.22s);
+  opacity: 0.95;
+}
+
+@keyframes gearRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: scaleY(0.55) translateY(8%);
+  }
+  50% {
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-mark__gear,
+  .animated-mark__bar {
+    animation: none;
+  }
+}

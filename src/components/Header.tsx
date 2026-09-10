@@ -1,16 +1,25 @@
+import Avatar from "./Avatar";
 import { useLang } from "../hooks/useLang";
 
 export default function Header() {
   const { lang, toggleLang } = useLang();
 
   return (
-    <header className="flex items-center justify-between px-6 sm:px-10 py-5 border-b border-border">
-      <span className="text-sm font-semibold tracking-tight">{"</>"}</span>
+    <header className="flex items-center justify-between gap-4 border-b border-line pb-5">
+      <div className="flex items-center gap-3 min-w-0">
+        <Avatar size={28} label="Peter" className="avatar-mark--header" />
+        <span className="font-display text-[15px] font-bold tracking-tight text-ink">
+          peter
+        </span>
+        <span className="hidden sm:inline section-kicker ml-1">signal / studio</span>
+      </div>
       <button
+        type="button"
         onClick={toggleLang}
-        className="text-xs font-mono text-text-muted hover:text-text transition-colors px-2 py-1 rounded-md hover:bg-bg"
+        className="section-kicker px-2.5 py-1.5 border border-line hover:border-line-strong hover:text-violet-soft transition-colors"
+        aria-label="Toggle language"
       >
-        {lang === "zh" ? "EN" : "\u4e2d\u6587"}
+        {lang === "zh" ? "EN" : "中文"}
       </button>
     </header>
   );
