@@ -186,13 +186,6 @@ export const projects: Project[] = [
         },
       },
       {
-        src: "/covers/starsay/sim-planets.jpg",
-        caption: {
-          zh: "Planets · 走进主题星系，选择此刻想探索的自己",
-          en: "Planets · Enter a theme galaxy; choose which self to explore",
-        },
-      },
-      {
         src: "/covers/starsay/sim-awareness.jpg",
         caption: {
           zh: "Awareness Feed · 碎片念头收成可回看的觉察记忆",
