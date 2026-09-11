@@ -24,15 +24,13 @@ function App() {
     <LangContext.Provider
       value={{ lang, t: getTranslations(lang), toggleLang }}
     >
-      <div className="min-h-screen">
-        <div className="mx-auto w-full max-w-5xl px-5 sm:px-8 pt-6 pb-16">
+      <div className="min-h-screen bg-bg">
+        <div className="mx-auto w-full max-w-3xl px-6 sm:px-8 pt-10 pb-24">
           <Header />
-          <main className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] gap-10 lg:gap-16 items-start">
+          <main className="mt-16 sm:mt-20 space-y-20">
             <Hero />
-            <div className="min-w-0 space-y-12">
-              <ProjectList />
-              <WritingLinks />
-            </div>
+            <ProjectList />
+            <WritingLinks />
           </main>
           <Footer />
         </div>
