@@ -91,31 +91,31 @@ export const projects: Project[] = [
         },
       },
       {
-        src: "/covers/starsay/planet-terran-wet.gif",
+        src: "/covers/starsay/planet-grid-habitable.gif",
         caption: {
-          zh: "单星高清 · Terran Wet——像素星球引擎拉满分辨率后的呼吸与转动",
-          en: "Single planet HD · Terran Wet—pixel-planet engine at max resolution, breathing and turning",
+          zh: "行星样式 · 宜居组：湿润陆海 / 干旱陆地 / 群岛 / 冰世界",
+          en: "Planet styles · Habitable set: wet terran / dry / islands / ice",
         },
       },
       {
-        src: "/covers/starsay/planet-gas-giant-2.gif",
+        src: "/covers/starsay/planet-grid-extreme.gif",
         caption: {
-          zh: "单星高清 · Gas Giant——环与云带在最高像素采样下缓缓流转",
-          en: "Single planet HD · Gas Giant—rings and bands drifting at peak pixel sampling",
+          zh: "行星样式 · 极端组：熔岩 / 无大气 / 小行星 / 气态巨行星",
+          en: "Planet styles · Extreme set: lava / airless / asteroid / gas giant",
         },
       },
       {
-        src: "/covers/starsay/planet-lava-world.gif",
+        src: "/covers/starsay/planet-grid-cosmic.gif",
         caption: {
-          zh: "单星高清 · Lava World——情绪与能量的一颗炽热主题星",
-          en: "Single planet HD · Lava World—a fierce theme-star for heat and intensity",
+          zh: "行星样式 · 宇宙组：环带气态 / 恒星 / 黑洞 / 星系",
+          en: "Planet styles · Cosmic set: ringed gas / star / black hole / galaxy",
         },
       },
       {
-        src: "/covers/starsay/planet-ice-world.gif",
+        src: "/covers/starsay/planet-grid-mixed.gif",
         caption: {
-          zh: "单星高清 · Ice World——冷静觉察时的一颗静默星",
-          en: "Single planet HD · Ice World—a quiet star for clear awareness",
+          zh: "行星样式 · 精选组：四种气质并置，一眼扫过记忆星球的光谱",
+          en: "Planet styles · Mixed set: four temperaments at a glance",
         },
       },
       {

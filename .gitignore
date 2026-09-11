@@ -23,3 +23,4 @@ public/covers/starsay/*.mp4
 public/covers/starsay/*.webm
 yarn-debug.log*
 yarn-error.log*
+_previews/
