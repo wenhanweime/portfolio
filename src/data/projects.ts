@@ -13,7 +13,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "starsay",
-    name: { zh: "StarSay 星说", en: "StarSay" },
+    name: { zh: "StarSay", en: "StarSay" },
     description: {
       zh: "星盘与 AI 对话的个人宇宙产品。从 Web 原型到 Web / iOS / Android，自研星盘引擎与完整用户系统。原名 StarOracle。",
       en: "Personal-universe product pairing star charts with AI dialogue. Web prototype to Web / iOS / Android, with a custom chart engine. Formerly StarOracle.",
@@ -103,7 +103,13 @@ export const projects: Project[] = [
       ],
     },
     year: "2026",
-    cover: "/covers/herduck.png",
+    cover: "/covers/herduck.jpg",
+    gallery: [
+      { src: "/covers/herduck/agents.jpg", caption: { zh: "Agents 分屏", en: "Agents" } },
+      { src: "/covers/herduck/topics.jpg", caption: { zh: "Topics", en: "Topics" } },
+      { src: "/covers/herduck/projects.jpg", caption: { zh: "Projects", en: "Projects" } },
+      { src: "/covers/herduck/sessions.jpg", caption: { zh: "Sessions", en: "Sessions" } },
+    ],
     href: "https://github.com/wenhanweime/herduck",
   },
   {
@@ -150,7 +156,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2026",
-    cover: "/covers/us-stock-daily.png",
+    cover: "/covers/us-stock-daily.jpg",
     href: "https://wenhanweime.github.io/us-stock-daily/",
   },
   {
@@ -174,7 +180,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2024",
-    cover: "/covers/content-automation.png",
+    cover: "/covers/content-automation.jpg",
   },
 ];
 
