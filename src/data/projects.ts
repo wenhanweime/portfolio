@@ -12,6 +12,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "herduck",
+    name: { zh: "Herduck", en: "Herduck" },
+    description: {
+      zh: "面向 AI 编程代理的终端工作区：并排跑 agent、找回历史会话、按项目与主题继续。兼容 Claude Code、Codex、OpenCode、Pi。",
+      en: "Terminal workspace for AI coding agents — split panes, resume sessions, continue by project or topic. Works with Claude Code, Codex, OpenCode, Pi.",
+    },
+    techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
+    highlights: {
+      zh: [
+        "多 agent 分屏与会话恢复",
+        "Sessions / Projects / Topics 组织工作",
+        "开源 · github.com/wenhanweime/herduck",
+      ],
+      en: [
+        "Split panes and session resume for multiple agents",
+        "Sessions, Projects, and Topics to organize work",
+        "Open source · github.com/wenhanweime/herduck",
+      ],
+    },
+    year: "2026",
+    cover: "/covers/herduck.jpg",
+    gallery: [
+      { src: "/covers/herduck/agents.jpg", caption: { zh: "Agents 分屏", en: "Agents" } },
+      { src: "/covers/herduck/topics.jpg", caption: { zh: "Topics", en: "Topics" } },
+      { src: "/covers/herduck/projects.jpg", caption: { zh: "Projects", en: "Projects" } },
+      { src: "/covers/herduck/sessions.jpg", caption: { zh: "Sessions", en: "Sessions" } },
+    ],
+    href: "https://github.com/wenhanweime/herduck",
+  },
+  {
     id: "starsay",
     name: { zh: "StarSay", en: "StarSay" },
     description: {
@@ -83,36 +113,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "herduck",
-    name: { zh: "Herduck", en: "Herduck" },
-    description: {
-      zh: "面向 AI 编程代理的终端工作区：并排跑 agent、找回历史会话、按项目与主题继续。兼容 Claude Code、Codex、OpenCode、Pi。",
-      en: "Terminal workspace for AI coding agents — split panes, resume sessions, continue by project or topic. Works with Claude Code, Codex, OpenCode, Pi.",
-    },
-    techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
-    highlights: {
-      zh: [
-        "多 agent 分屏与会话恢复",
-        "Sessions / Projects / Topics 组织工作",
-        "开源 · github.com/wenhanweime/herduck",
-      ],
-      en: [
-        "Split panes and session resume for multiple agents",
-        "Sessions, Projects, and Topics to organize work",
-        "Open source · github.com/wenhanweime/herduck",
-      ],
-    },
-    year: "2026",
-    cover: "/covers/herduck.jpg",
-    gallery: [
-      { src: "/covers/herduck/agents.jpg", caption: { zh: "Agents 分屏", en: "Agents" } },
-      { src: "/covers/herduck/topics.jpg", caption: { zh: "Topics", en: "Topics" } },
-      { src: "/covers/herduck/projects.jpg", caption: { zh: "Projects", en: "Projects" } },
-      { src: "/covers/herduck/sessions.jpg", caption: { zh: "Sessions", en: "Sessions" } },
-    ],
-    href: "https://github.com/wenhanweime/herduck",
-  },
-  {
     id: "md2video",
     name: { zh: "md2video", en: "md2video" },
     description: {
@@ -181,7 +181,13 @@ export const projects: Project[] = [
     },
     year: "2024",
     cover: "/covers/content-automation.jpg",
-  },
+    gallery: [
+      { src: "/covers/autopublish/sketch.jpg", caption: { zh: "生成模板 · Sketch", en: "Template · Sketch" } },
+      { src: "/covers/autopublish/autofit.jpg", caption: { zh: "生成模板 · Auto-fit", en: "Template · Auto-fit" } },
+      { src: "/covers/autopublish/geometric.jpg", caption: { zh: "生成模板 · Geometric", en: "Template · Geometric" } },
+      { src: "/covers/autopublish/retro.jpg", caption: { zh: "生成模板 · Retro", en: "Template · Retro" } },
+    ],
+  }
 ];
 
 export function getProject(id: string): Project | undefined {
