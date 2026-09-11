@@ -106,6 +106,14 @@ export const projects: Project[] = [
         },
       },
       {
+        src: "/covers/starsay/sim-galaxy.jpg",
+        full: true,
+        caption: {
+          zh: "主页银河 · 轻触星河，说说你的困惑——提问由此点亮成星",
+          en: "Home galaxy · Touch the sky, ask anything—every question can light a star",
+        },
+      },
+      {
         kind: "prose",
         eyebrow: { zh: "记忆成星", en: "Memory becomes a world" },
         title: {
@@ -189,13 +197,6 @@ export const projects: Project[] = [
         caption: {
           zh: "Awareness Feed · 碎片念头收成可回看的觉察记忆",
           en: "Awareness Feed · Scattered thoughts become awareness you can revisit",
-        },
-      },
-      {
-        src: "/covers/starsay/sim-stars.jpg",
-        caption: {
-          zh: "集星 · 洞察变成星卡，Memory 看得见",
-          en: "Stars · Insights become cards—memory made visible",
         },
       },
     ],
