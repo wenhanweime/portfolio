@@ -1,8 +1,67 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { getProject } from "../data/projects";
+import { getProject, type GalleryItem } from "../data/projects";
 import { asset } from "../lib/asset";
 import { useLang } from "../hooks/useLang";
+
+function GalleryBlock({
+  item,
+  lang,
+  fallbackAlt,
+}: {
+  item: GalleryItem;
+  lang: "zh" | "en";
+  fallbackAlt: string;
+}) {
+  if (item.kind === "prose") {
+    return (
+      <div className="max-w-xl mx-auto text-center py-6 sm:py-8 px-1">
+        {item.eyebrow && (
+          <p className="text-[11px] tracking-[0.14em] uppercase text-ink-mute mb-3">
+            {item.eyebrow[lang]}
+          </p>
+        )}
+        <h3 className="font-serif-bio text-[1.2rem] sm:text-[1.35rem] text-ink leading-snug tracking-tight">
+          {item.title[lang]}
+        </h3>
+        <p className="mt-3.5 font-serif-bio text-[14px] sm:text-[15px] text-ink-dim leading-[1.75]">
+          {item.body[lang]}
+        </p>
+      </div>
+    );
+  }
+
+  const full = Boolean(item.full);
+  return (
+    <figure
+      className={
+        full
+          ? "overflow-hidden rounded-[12px] bg-black ring-1 ring-line"
+          : "overflow-hidden rounded-[10px] bg-surface ring-1 ring-line"
+      }
+    >
+      <div className={full ? "overflow-hidden bg-black" : "overflow-hidden bg-surface"}>
+        <img
+          src={asset(item.src)}
+          alt={item.caption?.[lang] ?? fallbackAlt}
+          className="h-auto w-full object-contain"
+          loading="lazy"
+        />
+      </div>
+      {item.caption && (
+        <figcaption
+          className={
+            full
+              ? "px-3 py-2.5 text-[12px] text-ink-mute bg-black/95 text-center tracking-wide"
+              : "px-3 py-2 text-[12px] text-ink-mute"
+          }
+        >
+          {item.caption[lang]}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -23,6 +82,9 @@ export default function ProjectDetail() {
       </div>
     );
   }
+
+  const gallery = project.gallery ?? [];
+  const hasProse = gallery.some((g) => g.kind === "prose");
 
   return (
     <article className="pt-2">
@@ -58,31 +120,32 @@ export default function ProjectDetail() {
         </p>
       </header>
 
-      {project.gallery && project.gallery.length > 0 && (
+      {gallery.length > 0 && (
         <section className="mt-10">
           <p className="text-[12px] text-ink-mute mb-3">{t.projects.gallery}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {project.gallery.map((shot) => (
-              <figure
-                key={shot.src}
-                className="overflow-hidden rounded-[10px] bg-surface ring-1 ring-line"
-              >
-                <div className="overflow-hidden bg-surface">
-                  <img
-                    src={asset(shot.src)}
-                    alt={shot.caption?.[lang] ?? project.name[lang]}
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                {shot.caption && (
-                  <figcaption className="px-3 py-2 text-[12px] text-ink-mute">
-                    {shot.caption[lang]}
-                  </figcaption>
-                )}
-              </figure>
-            ))}
-          </div>
+          {hasProse ? (
+            <div className="flex flex-col gap-5 sm:gap-7">
+              {gallery.map((item, i) => (
+                <GalleryBlock
+                  key={item.kind === "prose" ? `prose-${i}` : item.src}
+                  item={item}
+                  lang={lang}
+                  fallbackAlt={project.name[lang]}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {gallery.map((item, i) => (
+                <GalleryBlock
+                  key={item.kind === "prose" ? `prose-${i}` : item.src}
+                  item={item}
+                  lang={lang}
+                  fallbackAlt={project.name[lang]}
+                />
+              ))}
+            </div>
+          )}
         </section>
       )}
 
