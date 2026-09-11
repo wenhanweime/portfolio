@@ -5,6 +5,7 @@ export interface Project {
   techStack: string[];
   highlights: { zh: string[]; en: string[] };
   year: string;
+  cover: string;
   href?: string;
 }
 
@@ -38,6 +39,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2024–",
+    cover: "/covers/staroracle.jpg",
   },
   {
     id: "mira",
@@ -60,6 +62,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2025",
+    cover: "/covers/mira.png",
   },
   {
     id: "herduck",
@@ -82,6 +85,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2026",
+    cover: "/covers/herduck.png",
     href: "https://github.com/wenhanweime/herduck",
   },
   {
@@ -105,6 +109,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2024",
+    cover: "/covers/md2video.png",
   },
   {
     id: "us-stock-daily",
@@ -127,6 +132,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2026",
+    cover: "/covers/us-stock-daily.png",
     href: "https://wenhanweime.github.io/us-stock-daily/",
   },
   {
@@ -150,5 +156,10 @@ export const projects: Project[] = [
       ],
     },
     year: "2024",
+    cover: "/covers/content-automation.png",
   },
 ];
+
+export function getProject(id: string): Project | undefined {
+  return projects.find((p) => p.id === id);
+}

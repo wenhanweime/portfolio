@@ -11,6 +11,8 @@ export const en = {
     techStack: "Stack",
     highlights: "Notes",
     open: "Open",
+    back: "Back",
+    notFound: "Project not found",
   },
   writing: {
     title: "Writing",

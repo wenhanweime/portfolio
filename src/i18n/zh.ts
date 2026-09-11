@@ -11,6 +11,8 @@ export const zh = {
     techStack: "技术栈",
     highlights: "要点",
     open: "打开",
+    back: "返回",
+    notFound: "未找到该项目",
   },
   writing: {
     title: "写作",

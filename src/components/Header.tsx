@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLang } from "../hooks/useLang";
 
 export default function Header() {
@@ -5,9 +6,12 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between gap-4">
-      <span className="text-[15px] font-semibold tracking-tight text-ink">
+      <Link
+        to="/"
+        className="text-[15px] font-semibold tracking-tight text-ink hover:text-accent transition-colors"
+      >
         Peter
-      </span>
+      </Link>
       <button
         type="button"
         onClick={toggleLang}

@@ -1,10 +1,10 @@
 import { useState, useCallback } from "react";
+import { Routes, Route } from "react-router-dom";
 import { LangContext, getTranslations } from "./hooks/useLang";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import ProjectList from "./components/ProjectList";
-import WritingLinks from "./components/WritingLinks";
 import Footer from "./components/Footer";
+import HomePage from "./components/HomePage";
+import ProjectDetail from "./components/ProjectDetail";
 import type { Lang } from "./types";
 
 function App() {
@@ -27,11 +27,10 @@ function App() {
       <div className="min-h-screen bg-bg">
         <div className="mx-auto w-full max-w-3xl px-6 sm:px-8 pt-10 pb-24">
           <Header />
-          <main className="mt-16 sm:mt-20 space-y-20">
-            <Hero />
-            <ProjectList />
-            <WritingLinks />
-          </main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Routes>
           <Footer />
         </div>
       </div>
