@@ -67,11 +67,11 @@ export default function ProjectDetail() {
                 key={shot.src}
                 className="overflow-hidden rounded-[10px] bg-surface ring-1 ring-line"
               >
-                <div className="aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
+                <div className="overflow-hidden bg-surface">
                   <img
                     src={asset(shot.src)}
                     alt={shot.caption?.[lang] ?? project.name[lang]}
-                    className="h-full w-full object-cover object-top"
+                    className="h-auto w-full object-contain"
                     loading="lazy"
                   />
                 </div>
