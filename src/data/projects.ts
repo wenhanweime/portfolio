@@ -45,8 +45,8 @@ export const projects: Project[] = [
     id: "starsay",
     name: { zh: "StarSay", en: "StarSay" },
     description: {
-      zh: "你的心里藏着一整座宇宙。StarSay 把每一次提问、每一段觉察，都点亮成一颗星，再慢慢长成只属于你的星系。对话是入口；旁路记忆轻轻接住值得留下的瞬间；觉察流收集念头与情绪；集星把洞察收成可回看的星卡——让 Memory 看得见，也让你更愿意继续认识自己。Ask anything，听见宇宙轻轻回答；Widget 把内心宇宙放在主屏幕上。",
-      en: "Your mind holds a whole universe. StarSay turns every question and flicker of awareness into a star—then grows them into a galaxy that is only yours. Conversation is the doorway; a quiet side-path memory keeps what matters. The Awareness Feed gathers thoughts and feelings; Stars collect insights as cards you can revisit—memory made visible, so you want to keep going. Ask anything. Listen softly. Carry your inner universe on the home screen.",
+      zh: "你的心里藏着一整座宇宙。StarSay 不是又一个聊天框——主对话负责体验，旁路 Memory Agent 约每五轮轻轻对比过往、判断「这一刻值不值得留下」；日级 dreaming 把碎片收成自我认知；觉察流收集念头与情绪；集星把洞察变成可回看的星卡。Memory 不再是黑盒向量，而是你看得见、摸得着的星辰。Ask anything，点亮一颗星；Widget 把内心宇宙放在主屏幕上，让你愿意继续聊、继续被记住。",
+      en: "Your mind holds a whole universe. StarSay is not another chat box—the main loop keeps the feel light, while a side-path Memory agent every few turns decides what is worth keeping. Daily dreaming compacts fragments into self-knowledge; the Awareness Feed gathers thoughts and feelings; Stars turn insights into cards you can revisit. Memory stops being a black-box vector and becomes something you can see. Ask anything. A star is born. Carry your inner universe on the home screen.",
     },
     techStack: [
       "React",
@@ -56,19 +56,28 @@ export const projects: Project[] = [
       "Node.js",
       "Supabase",
       "Tailwind CSS",
+      "WebGL Pixel Planets",
     ],
     highlights: {
       zh: [
         "内心宇宙：提问点亮星辰，反思长成只属于你的星系",
-        "Memory 外显：旁路记忆写入 × 日级沉淀，星卡让「被记住」看得见",
-        "觉察流 × 集星：收集念头与情绪，再收成可检索的个人星图",
-        "Planets 主题入口：用星系选此刻想探索的自己",
+        "旁路 Memory Agent：主对话不堵，约每 5 轮抽取觉察与新事实",
+        "日级 dreaming / compact：跨会话总结，次日可见「昨日变化」",
+        "Memory 外显：星卡可收集、可回看——看见自己被记住",
+        "觉察流：碎片念头与情绪，收成一条可检索的觉察记忆",
+        "Planets × 像素星球：主题星系入口，单星可拉满分辨率转动",
+        "低摩擦补 context：灵感 / 点选也能攒记忆，不只靠打字",
+        "跨端：Web / iOS / Android，Widget 把宇宙带在身边",
       ],
       en: [
-        "Inner universe: every ask lights a star; reflections grow into your galaxy",
-        "Memory made visible: side-path writing and daily compact, as collectible star cards",
-        "Awareness Feed × Stars: gather feelings, then keep insights you can revisit",
-        "Planets: enter themes as constellations of the self",
+        "Inner universe: every ask lights a star; reflections grow your galaxy",
+        "Side-path Memory agent: main chat stays light; ~every 5 turns extract what matters",
+        "Daily dreaming / compact: cross-session self-knowledge, visible the next day",
+        "Memory made visible: collectible star cards you can trust and revisit",
+        "Awareness Feed: scattered thoughts become a searchable stream",
+        "Planets × pixel worlds: theme galaxies, single planets at max resolution",
+        "Low-friction context: inspiration taps feed memory—not only typing",
+        "Web / iOS / Android, with a home-screen widget for your cosmos",
       ],
     },
     year: "2024–",
@@ -79,6 +88,34 @@ export const projects: Project[] = [
         caption: {
           zh: "内心宇宙的四扇窗 · Ask 点亮 / Galaxy 生长 / Inspire 轻声回答 / Widget 随身携带",
           en: "Four windows into the self · Ask lights a star / Galaxy grows / Inspire answers softly / Widget stays close",
+        },
+      },
+      {
+        src: "/covers/starsay/planet-terran-wet.gif",
+        caption: {
+          zh: "单星高清 · Terran Wet——像素星球引擎拉满分辨率后的呼吸与转动",
+          en: "Single planet HD · Terran Wet—pixel-planet engine at max resolution, breathing and turning",
+        },
+      },
+      {
+        src: "/covers/starsay/planet-gas-giant-2.gif",
+        caption: {
+          zh: "单星高清 · Gas Giant——环与云带在最高像素采样下缓缓流转",
+          en: "Single planet HD · Gas Giant—rings and bands drifting at peak pixel sampling",
+        },
+      },
+      {
+        src: "/covers/starsay/planet-lava-world.gif",
+        caption: {
+          zh: "单星高清 · Lava World——情绪与能量的一颗炽热主题星",
+          en: "Single planet HD · Lava World—a fierce theme-star for heat and intensity",
+        },
+      },
+      {
+        src: "/covers/starsay/planet-ice-world.gif",
+        caption: {
+          zh: "单星高清 · Ice World——冷静觉察时的一颗静默星",
+          en: "Single planet HD · Ice World—a quiet star for clear awareness",
         },
       },
       {
