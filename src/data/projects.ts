@@ -182,10 +182,10 @@ export const projects: Project[] = [
     year: "2024",
     cover: "/covers/content-automation.jpg",
     gallery: [
-      { src: "/covers/autopublish/sketch.jpg", caption: { zh: "生成模板 · Sketch", en: "Template · Sketch" } },
-      { src: "/covers/autopublish/autofit.jpg", caption: { zh: "生成模板 · Auto-fit", en: "Template · Auto-fit" } },
-      { src: "/covers/autopublish/geometric.jpg", caption: { zh: "生成模板 · Geometric", en: "Template · Geometric" } },
-      { src: "/covers/autopublish/retro.jpg", caption: { zh: "生成模板 · Retro", en: "Template · Retro" } },
+      { src: "/covers/autopublish/botanical-cover.jpg", caption: { zh: "Botanical · 森林绿封面", en: "Botanical · forest cover" } },
+      { src: "/covers/autopublish/botanical-1.jpg", caption: { zh: "Botanical · 卡片 1", en: "Botanical · card 1" } },
+      { src: "/covers/autopublish/botanical-2.jpg", caption: { zh: "Botanical · 卡片 2", en: "Botanical · card 2" } },
+      { src: "/covers/autopublish/botanical-3.jpg", caption: { zh: "Botanical · 卡片 3", en: "Botanical · card 3" } },
     ],
   }
 ];
