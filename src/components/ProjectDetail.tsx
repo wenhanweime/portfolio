@@ -39,7 +39,7 @@ export default function ProjectDetail() {
           <img
             src={asset(project.cover)}
             alt={project.name[lang]}
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-contain bg-surface"
           />
         </div>
       </div>
