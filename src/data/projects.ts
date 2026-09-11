@@ -93,29 +93,22 @@ export const projects: Project[] = [
       {
         src: "/covers/starsay/planet-grid-habitable.gif",
         caption: {
-          zh: "行星样式 · 宜居组：湿润陆海 / 干旱陆地 / 群岛 / 冰世界",
-          en: "Planet styles · Habitable set: wet terran / dry / islands / ice",
+          zh: "行星样式四宫格 · 宜居：湿润陆海 / 干旱 / 群岛 / 冰世界",
+          en: "Planet styles · Habitable: wet terran / dry / islands / ice",
         },
       },
       {
         src: "/covers/starsay/planet-grid-extreme.gif",
         caption: {
-          zh: "行星样式 · 极端组：熔岩 / 无大气 / 小行星 / 气态巨行星",
-          en: "Planet styles · Extreme set: lava / airless / asteroid / gas giant",
+          zh: "行星样式四宫格 · 极端：熔岩 / 无大气 / 小行星 / 气态巨行星",
+          en: "Planet styles · Extreme: lava / airless / asteroid / gas giant",
         },
       },
       {
         src: "/covers/starsay/planet-grid-cosmic.gif",
         caption: {
-          zh: "行星样式 · 宇宙组：环带气态 / 恒星 / 黑洞 / 星系",
-          en: "Planet styles · Cosmic set: ringed gas / star / black hole / galaxy",
-        },
-      },
-      {
-        src: "/covers/starsay/planet-grid-mixed.gif",
-        caption: {
-          zh: "行星样式 · 精选组：四种气质并置，一眼扫过记忆星球的光谱",
-          en: "Planet styles · Mixed set: four temperaments at a glance",
+          zh: "行星样式四宫格 · 宇宙：环带气态 / 恒星 / 黑洞 / 星系",
+          en: "Planet styles · Cosmic: ringed gas / star / black hole / galaxy",
         },
       },
       {
