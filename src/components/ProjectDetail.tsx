@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getProject } from "../data/projects";
+import { asset } from "../lib/asset";
 import { useLang } from "../hooks/useLang";
 
 export default function ProjectDetail() {
@@ -36,7 +37,7 @@ export default function ProjectDetail() {
       <div className="overflow-hidden rounded-[12px] bg-surface ring-1 ring-line">
         <div className="aspect-[16/10] sm:aspect-[3/2] overflow-hidden">
           <img
-            src={project.cover}
+            src={asset(project.cover)}
             alt={project.name[lang]}
             className="h-full w-full object-cover object-top"
           />
@@ -68,7 +69,7 @@ export default function ProjectDetail() {
               >
                 <div className="aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
                   <img
-                    src={shot.src}
+                    src={asset(shot.src)}
                     alt={shot.caption?.[lang] ?? project.name[lang]}
                     className="h-full w-full object-cover object-top"
                     loading="lazy"

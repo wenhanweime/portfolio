@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
+import { asset } from "../lib/asset";
 import { useLang } from "../hooks/useLang";
 
 export default function ProjectList() {
@@ -20,7 +21,7 @@ export default function ProjectList() {
               <div className="overflow-hidden rounded-[12px] bg-surface ring-1 ring-line">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
-                    src={project.cover}
+                    src={asset(project.cover)}
                     alt={project.name[lang]}
                     loading="lazy"
                     className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"

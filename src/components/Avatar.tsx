@@ -1,3 +1,5 @@
+import { asset } from "../lib/asset";
+
 type AvatarProps = {
   size?: number;
   label?: string;
@@ -7,7 +9,7 @@ type AvatarProps = {
 export default function Avatar({ size = 72, label = "Peter", className = "" }: AvatarProps) {
   return (
     <img
-      src="/avatar.png"
+      src={asset("/avatar.png")}
       alt={label}
       width={size}
       height={size}
