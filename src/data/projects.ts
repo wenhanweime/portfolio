@@ -45,8 +45,8 @@ export const projects: Project[] = [
     id: "starsay",
     name: { zh: "StarSay", en: "StarSay" },
     description: {
-      zh: "星盘与 AI 对话的个人宇宙产品。从 Web 原型到 Web / iOS / Android，自研星盘引擎与完整用户系统。原名 StarOracle。",
-      en: "Personal-universe product pairing star charts with AI dialogue. Web prototype to Web / iOS / Android, with a custom chart engine. Formerly StarOracle.",
+      zh: "你的心里藏着一整座宇宙。StarSay 把每一次提问、每一段觉察，都点亮成一颗星，再慢慢长成只属于你的星系。对话是入口；旁路记忆轻轻接住值得留下的瞬间；觉察流收集念头与情绪；集星把洞察收成可回看的星卡——让 Memory 看得见，也让你更愿意继续认识自己。Ask anything，听见宇宙轻轻回答；Widget 把内心宇宙放在主屏幕上。",
+      en: "Your mind holds a whole universe. StarSay turns every question and flicker of awareness into a star—then grows them into a galaxy that is only yours. Conversation is the doorway; a quiet side-path memory keeps what matters. The Awareness Feed gathers thoughts and feelings; Stars collect insights as cards you can revisit—memory made visible, so you want to keep going. Ask anything. Listen softly. Carry your inner universe on the home screen.",
     },
     techStack: [
       "React",
@@ -59,14 +59,16 @@ export const projects: Project[] = [
     ],
     highlights: {
       zh: [
-        "Ask / Galaxy / Inspire / Widget 完整产品面",
-        "Planets · Awareness Feed · 集星 三条功能主线",
-        "Web 原型到 Web / iOS / Android 全平台",
+        "内心宇宙：提问点亮星辰，反思长成只属于你的星系",
+        "Memory 外显：旁路记忆写入 × 日级沉淀，星卡让「被记住」看得见",
+        "觉察流 × 集星：收集念头与情绪，再收成可检索的个人星图",
+        "Planets 主题入口：用星系选此刻想探索的自己",
       ],
       en: [
-        "Ask, Galaxy, Inspire, Widget product surfaces",
-        "Planets, Awareness Feed, and Stars as core loops",
-        "Web prototype to Web / iOS / Android",
+        "Inner universe: every ask lights a star; reflections grow into your galaxy",
+        "Memory made visible: side-path writing and daily compact, as collectible star cards",
+        "Awareness Feed × Stars: gather feelings, then keep insights you can revisit",
+        "Planets: enter themes as constellations of the self",
       ],
     },
     year: "2024–",
@@ -75,29 +77,29 @@ export const projects: Project[] = [
       {
         src: "/covers/starsay/marketing-strip.jpg",
         caption: {
-          zh: "产品全貌 · Ask / Galaxy / Inspire / Widget 一眼看清",
-          en: "Overview · Ask, Galaxy, Inspire, Widget at a glance",
+          zh: "内心宇宙的四扇窗 · Ask 点亮 / Galaxy 生长 / Inspire 轻声回答 / Widget 随身携带",
+          en: "Four windows into the self · Ask lights a star / Galaxy grows / Inspire answers softly / Widget stays close",
         },
       },
       {
         src: "/covers/starsay/sim-planets.jpg",
         caption: {
-          zh: "Planets · 用星系选主题，探索你的内在宇宙",
-          en: "Planets · Browse themes as a personal cosmos",
+          zh: "Planets · 走进主题星系，选择此刻想探索的自己——内心宇宙的入口",
+          en: "Planets · Enter theme galaxies and choose which self to explore—the door to your inner universe",
         },
       },
       {
         src: "/covers/starsay/sim-awareness.jpg",
         caption: {
-          zh: "Awareness Feed · 想法与情绪沉淀成可回看的觉察流",
-          en: "Awareness Feed · Thoughts and feelings as a living stream",
+          zh: "Awareness Feed · 把碎片念头与情绪收成觉察记忆，Memory 开始有形状",
+          en: "Awareness Feed · Gather scattered thoughts and feelings into awareness—memory taking shape",
         },
       },
       {
         src: "/covers/starsay/sim-stars.jpg",
         caption: {
-          zh: "集星 · 把洞察收成星卡，随时回看与检索",
-          en: "Stars · Collect insights as star cards you can revisit",
+          zh: "集星 · 洞察变成星卡：看见自己被记住，才更愿意继续聊、继续长成星系",
+          en: "Stars · Insights become star cards—seeing what was kept makes you want to keep talking, keep growing the galaxy",
         },
       },
     ],
