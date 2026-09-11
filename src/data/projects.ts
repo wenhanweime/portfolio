@@ -59,30 +59,47 @@ export const projects: Project[] = [
     ],
     highlights: {
       zh: [
-        "Web 原型到全平台产品的完整迭代",
-        "自研星盘 / 星系可视化",
-        "Ask anything · Inspire Card · Widget 等产品面",
+        "Ask / Galaxy / Inspire / Widget 完整产品面",
+        "Planets · Awareness Feed · 集星 三条功能主线",
+        "Web 原型到 Web / iOS / Android 全平台",
       ],
       en: [
-        "Full path from web prototype to multi-platform",
-        "Custom star-chart / galaxy visualization",
-        "Ask anything, Inspire Card, Widget surfaces",
+        "Ask, Galaxy, Inspire, Widget product surfaces",
+        "Planets, Awareness Feed, and Stars as core loops",
+        "Web prototype to Web / iOS / Android",
       ],
     },
     year: "2024–",
     cover: "/covers/starsay-card.jpg",
     gallery: [
-      { src: "/covers/starsay/marketing-strip.jpg", caption: { zh: "营销图横拼", en: "Marketing strip" } },
-      { src: "/covers/starsay/hero.jpg", caption: { zh: "营销主视觉", en: "Marketing hero" } },
-      { src: "/covers/starsay/galaxy.jpg", caption: { zh: "Your Own Galaxy", en: "Your Own Galaxy" } },
-      { src: "/covers/starsay/inspire.jpg", caption: { zh: "Inspire Card", en: "Inspire Card" } },
-      { src: "/covers/starsay/widget.jpg", caption: { zh: "桌面小组件", en: "Widget" } },
-      { src: "/covers/starsay/sim-home.jpg", caption: { zh: "模拟器原版 · 首页", en: "Simulator · Home" } },
-      { src: "/covers/starsay/sim-planets.jpg", caption: { zh: "模拟器原版 · Planets", en: "Simulator · Planets" } },
-      { src: "/covers/starsay/sim-awareness.jpg", caption: { zh: "模拟器原版 · Awareness", en: "Simulator · Awareness" } },
-      { src: "/covers/starsay/sim-awareness-2.jpg", caption: { zh: "模拟器原版 · Awareness feed", en: "Simulator · Awareness feed" } },
-      { src: "/covers/starsay/sim-stars.jpg", caption: { zh: "模拟器原版 · 集星", en: "Simulator · Stars" } },
-      { src: "/covers/starsay/sim-stars-2.jpg", caption: { zh: "模拟器原版 · 星卡", en: "Simulator · Star cards" } },
+      {
+        src: "/covers/starsay/marketing-strip.jpg",
+        caption: {
+          zh: "产品全貌 · Ask / Galaxy / Inspire / Widget 一眼看清",
+          en: "Overview · Ask, Galaxy, Inspire, Widget at a glance",
+        },
+      },
+      {
+        src: "/covers/starsay/sim-planets.jpg",
+        caption: {
+          zh: "Planets · 用星系选主题，探索你的内在宇宙",
+          en: "Planets · Browse themes as a personal cosmos",
+        },
+      },
+      {
+        src: "/covers/starsay/sim-awareness.jpg",
+        caption: {
+          zh: "Awareness Feed · 想法与情绪沉淀成可回看的觉察流",
+          en: "Awareness Feed · Thoughts and feelings as a living stream",
+        },
+      },
+      {
+        src: "/covers/starsay/sim-stars.jpg",
+        caption: {
+          zh: "集星 · 把洞察收成星卡，随时回看与检索",
+          en: "Stars · Collect insights as star cards you can revisit",
+        },
+      },
     ],
   },
   {
