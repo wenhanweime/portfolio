@@ -1,7 +1,7 @@
 export const zh = {
   hero: {
     name: "Peter",
-    affiliation: "PKU · SCUT",
+    affiliation: "PKU",
     bio: "做 AI 产品、空间计算体验，以及不打扰人的小工具。少一点喧哗，多一点完成。",
   },
   projects: {
