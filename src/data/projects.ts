@@ -182,10 +182,10 @@ export const projects: Project[] = [
     year: "2024",
     cover: "/covers/content-automation.jpg",
     gallery: [
-      { src: "/covers/autopublish/obsidian-forest-cover.jpg", caption: { zh: "Obsidian · 森林清晨", en: "Obsidian · Forest Morning" } },
-      { src: "/covers/autopublish/obsidian-1.jpg", caption: { zh: "Obsidian forest · 页 1", en: "Obsidian forest · page 1" } },
-      { src: "/covers/autopublish/obsidian-2.jpg", caption: { zh: "Obsidian forest · 页 2", en: "Obsidian forest · page 2" } },
-      { src: "/covers/autopublish/obsidian-3.jpg", caption: { zh: "Obsidian forest · 页 3", en: "Obsidian forest · page 3" } },
+      { src: "/covers/autopublish/obsidian-forest-cover.jpg", caption: { zh: "Obsidian 森林清晨 · 成品", en: "Obsidian Forest Morning · finished" } },
+      { src: "/covers/autopublish/obsidian-1.jpg", caption: { zh: "成品页 2", en: "Finished page 2" } },
+      { src: "/covers/autopublish/obsidian-2.jpg", caption: { zh: "成品页 3", en: "Finished page 3" } },
+      { src: "/covers/autopublish/obsidian-3.jpg", caption: { zh: "成品页 4", en: "Finished page 4" } },
     ],
   }
 ];
