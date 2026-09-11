@@ -138,7 +138,7 @@ export const projects: Project[] = [
         },
       },
       {
-        src: "/covers/starsay/planet-grid-habitable.gif",
+        src: "/covers/starsay/planet-grid-habitable-v2.gif",
         full: true,
         caption: {
           zh: "湿润陆海 · 干旱 · 群岛 · 冰世界",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
         },
       },
       {
-        src: "/covers/starsay/planet-grid-extreme.gif",
+        src: "/covers/starsay/planet-grid-extreme-v2.gif",
         full: true,
         caption: {
           zh: "熔岩 · 无大气 · 小行星 · 气态巨行星",
@@ -178,7 +178,7 @@ export const projects: Project[] = [
         },
       },
       {
-        src: "/covers/starsay/planet-grid-cosmic.gif",
+        src: "/covers/starsay/planet-grid-cosmic-v2.gif",
         full: true,
         caption: {
           zh: "环带气态 · 恒星 · 黑洞 · 星系",
