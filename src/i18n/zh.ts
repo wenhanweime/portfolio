@@ -12,6 +12,7 @@ export const zh = {
     highlights: "要点",
     open: "打开",
     back: "返回",
+    gallery: "图集",
     notFound: "未找到该项目",
   },
   writing: {

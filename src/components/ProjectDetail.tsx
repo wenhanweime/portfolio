@@ -57,6 +57,34 @@ export default function ProjectDetail() {
         </p>
       </header>
 
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="mt-10">
+          <p className="text-[12px] text-ink-mute mb-3">{t.projects.gallery}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {project.gallery.map((shot) => (
+              <figure
+                key={shot.src}
+                className="overflow-hidden rounded-[10px] bg-surface ring-1 ring-line"
+              >
+                <div className="aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
+                  <img
+                    src={shot.src}
+                    alt={shot.caption?.[lang] ?? project.name[lang]}
+                    className="h-full w-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+                {shot.caption && (
+                  <figcaption className="px-3 py-2 text-[12px] text-ink-mute">
+                    {shot.caption[lang]}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
       <div className="hairline my-8" />
 
       <div className="mb-8">

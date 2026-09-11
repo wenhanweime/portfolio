@@ -12,6 +12,7 @@ export const en = {
     highlights: "Notes",
     open: "Open",
     back: "Back",
+    gallery: "Gallery",
     notFound: "Project not found",
   },
   writing: {

@@ -6,16 +6,17 @@ export interface Project {
   highlights: { zh: string[]; en: string[] };
   year: string;
   cover: string;
+  gallery?: { src: string; caption?: { zh: string; en: string } }[];
   href?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "staroracle",
-    name: { zh: "星谕 StarOracle", en: "StarOracle" },
+    id: "starsay",
+    name: { zh: "StarSay 星说", en: "StarSay" },
     description: {
-      zh: "星座互动产品：用星盘与 AI 对话探索自我。从 Web 原型到 Web / iOS / Android，自研星盘引擎与完整用户系统。",
-      en: "Astrology product pairing charts with AI dialogue. Grew from a web prototype to Web / iOS / Android, with a custom chart engine and full user system.",
+      zh: "星盘与 AI 对话的个人宇宙产品。从 Web 原型到 Web / iOS / Android，自研星盘引擎与完整用户系统。原名 StarOracle。",
+      en: "Personal-universe product pairing star charts with AI dialogue. Web prototype to Web / iOS / Android, with a custom chart engine. Formerly StarOracle.",
     },
     techStack: [
       "React",
@@ -29,40 +30,57 @@ export const projects: Project[] = [
     highlights: {
       zh: [
         "Web 原型到全平台产品的完整迭代",
-        "自研星盘可视化引擎",
-        "AI 驱动的个性化星座对话",
+        "自研星盘 / 星系可视化",
+        "Ask anything · Inspire Card · Widget 等产品面",
       ],
       en: [
-        "Web prototype through multi-platform release",
-        "Custom star-chart visualization engine",
-        "Personalized astrology dialogue",
+        "Full path from web prototype to multi-platform",
+        "Custom star-chart / galaxy visualization",
+        "Ask anything, Inspire Card, Widget surfaces",
       ],
     },
     year: "2024–",
-    cover: "/covers/staroracle.jpg",
+    cover: "/covers/starsay.jpg",
+    gallery: [
+      { src: "/covers/starsay/hero.jpg", caption: { zh: "产品主视觉", en: "Hero" } },
+      { src: "/covers/starsay/galaxy.jpg", caption: { zh: "Your Own Galaxy", en: "Your Own Galaxy" } },
+      { src: "/covers/starsay/inspire.jpg", caption: { zh: "Inspire Card", en: "Inspire Card" } },
+      { src: "/covers/starsay/widget.jpg", caption: { zh: "桌面小组件", en: "Widget" } },
+      { src: "/covers/starsay/promo-apple.jpg", caption: { zh: "宣传片静帧 · Apple", en: "Promo still · Apple" } },
+      { src: "/covers/starsay/promo-aesthetic.jpg", caption: { zh: "宣传片静帧 · Aesthetic", en: "Promo still · Aesthetic" } },
+      { src: "/covers/starsay/promo-clean.jpg", caption: { zh: "宣传片静帧 · Clean", en: "Promo still · Clean" } },
+      { src: "/covers/starsay/clip-ask.jpg", caption: { zh: "Ask 动效截帧", en: "Ask clip" } },
+      { src: "/covers/starsay/clip-galaxy.jpg", caption: { zh: "Galaxy 动效截帧", en: "Galaxy clip" } },
+      { src: "/covers/starsay/clip-inspire.jpg", caption: { zh: "Inspire 动效截帧", en: "Inspire clip" } },
+    ],
   },
   {
     id: "mira",
     name: { zh: "MIRA", en: "MIRA" },
     description: {
-      zh: "Apple Vision Pro 原生应用：用 Swift 探索空间 UI、手势与 3D 渲染。",
-      en: "Native Vision Pro app in Swift — spatial UI, gesture, and 3D rendering.",
+      zh: "Apple Vision Pro 原生应用：空间 UI、手势与 3D 场景里的发现 / 地图 / 社交面板。",
+      en: "Native Vision Pro app — spatial UI, gesture, and 3D discovery / map / social panels.",
     },
     techStack: ["Swift", "SwiftUI", "visionOS", "RealityKit"],
     highlights: {
       zh: [
-        "Vision Pro 原生开发实践",
-        "空间 UI 与手势交互探索",
-        "从零搭建空间组件库",
+        "visionOS 玻璃拟态空间界面",
+        "附近推荐 Feed + 三维地图导航",
+        "沉浸态下的模型放置与校准",
       ],
       en: [
-        "Native Vision Pro development",
-        "Spatial UI and gesture exploration",
-        "Spatial component library from scratch",
+        "visionOS glassmorphic spatial UI",
+        "Nearby feed plus 3D map navigation",
+        "Immersive model placement and calibration",
       ],
     },
     year: "2025",
-    cover: "/covers/mira.png",
+    cover: "/covers/mira.jpg",
+    gallery: [
+      { src: "/covers/mira/spatial-2.jpg", caption: { zh: "空间双窗 · 展览详情", en: "Spatial dual windows" } },
+      { src: "/covers/mira/spatial-1.jpg", caption: { zh: "发现 / 地图 / 个人中心", en: "Discover / map / profile" } },
+      { src: "/covers/mira/immersive.jpg", caption: { zh: "沉浸态模型放置", en: "Immersive placement" } },
+    ],
   },
   {
     id: "herduck",
@@ -161,5 +179,6 @@ export const projects: Project[] = [
 ];
 
 export function getProject(id: string): Project | undefined {
+  if (id === "staroracle") return projects.find((p) => p.id === "starsay");
   return projects.find((p) => p.id === id);
 }
