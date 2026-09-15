@@ -1,16 +1,24 @@
+import { Link } from "react-router-dom";
 import { useLang } from "../hooks/useLang";
 
 export default function Header() {
   const { lang, toggleLang } = useLang();
 
   return (
-    <header className="flex items-center justify-between px-6 sm:px-10 py-5 border-b border-border">
-      <span className="text-sm font-semibold tracking-tight">{"</>"}</span>
-      <button
-        onClick={toggleLang}
-        className="text-xs font-mono text-text-muted hover:text-text transition-colors px-2 py-1 rounded-md hover:bg-bg"
+    <header className="flex items-center justify-between gap-4">
+      <Link
+        to="/"
+        className="text-[15px] font-semibold tracking-tight text-ink hover:text-accent transition-colors"
       >
-        {lang === "zh" ? "EN" : "\u4e2d\u6587"}
+        Peter
+      </Link>
+      <button
+        type="button"
+        onClick={toggleLang}
+        className="text-[13px] font-medium text-ink-mute hover:text-ink transition-colors px-1 py-1"
+        aria-label="Toggle language"
+      >
+        {lang === "zh" ? "EN" : "中文"}
       </button>
     </header>
   );
