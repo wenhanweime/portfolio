@@ -198,8 +198,8 @@ export const projects: Project[] = [
     id: "particle-morph",
     name: { zh: "粒子形态", en: "Particle Morph" },
     description: {
-      zh: "可变换的圆点粒子星空：从参考图采样布局，支持 NASA 星云与星系形态平滑切换，并带轻量 3D 视差。本地已有数十种形态，开源与线上部署即将就绪。",
-      en: "Transformable particle skies sampled from reference images—smooth morphs across NASA nebulae and galaxies, with light 3D parallax. Dozens of forms locally; open-source repo and live demo coming soon.",
+      zh: "可变换的圆点粒子星空：从参考图采样布局，支持 NASA 星云与星系形态平滑切换，并带轻量 3D 视差。每周更新一张 NASA 新图形态。开源 MIT。",
+      en: "Transformable particle skies sampled from reference images—smooth morphs across NASA nebulae and galaxies, with light 3D parallax. A new NASA image form each week. Open source (MIT).",
     },
     techStack: ["Vite", "TypeScript", "Three.js"],
     highlights: {
@@ -207,17 +207,18 @@ export const projects: Project[] = [
         "参考图采样布局，形态可平滑切换",
         "每周更新一张 NASA 新图形态",
         "轻量 3D 视差星空交互",
-        "开源仓库与线上演示即将上线",
+        "开源 · github.com/wenhanweime/particle-morph",
       ],
       en: [
         "Layouts sampled from reference images with smooth morphs",
         "A new NASA image form each week",
         "Light 3D parallax for the particle sky",
-        "Public repo and live demo coming soon",
+        "Open source · github.com/wenhanweime/particle-morph",
       ],
     },
     year: "2026",
-    cover: "/covers/particle-morph.jpg",
+    cover: "/covers/particle-morph-v2.jpg",
+    href: "https://wenhanweime.github.io/particle-morph/",
   },
   {
     id: "mira",
