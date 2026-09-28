@@ -196,23 +196,25 @@ export const projects: Project[] = [
   },
   {
     id: "particle-morph",
-    name: { zh: "粒子形态", en: "Particle Morph" },
+    name: { zh: "粒子星空", en: "Particle Sky" },
     description: {
-      zh: "可变换的圆点粒子星空：从参考图采样布局，支持 NASA 星云与星系形态平滑切换，并带轻量 3D 视差。每周更新一张 NASA 新图形态。开源 MIT。",
-      en: "Transformable particle skies sampled from reference images—smooth morphs across NASA nebulae and galaxies, with light 3D parallax. A new NASA image form each week. Open source (MIT).",
+      zh: "千万粒光点织成一片可触摸的夜空。从真实星云与星系取样布局，形态在呼吸间平滑切换；轻轻拖动，视差让星河微微侧倾。每周一帧 NASA 新图，星空又长出新的样子。",
+      en: "A sky woven from countless points of light. Layouts sampled from real nebulae and galaxies morph softly into one another; a gentle drag tilts the river of stars with light parallax. Each week a new NASA image arrives, and the sky grows another face.",
     },
     techStack: ["Vite", "TypeScript", "Three.js"],
     highlights: {
       zh: [
-        "参考图采样布局，形态可平滑切换",
+        "粒子模拟的可变换星空",
+        "NASA 星云与星系形态平滑切换",
+        "轻量 3D 视差，星河可侧倾",
         "每周更新一张 NASA 新图形态",
-        "轻量 3D 视差星空交互",
         "开源 · github.com/wenhanweime/particle-morph",
       ],
       en: [
-        "Layouts sampled from reference images with smooth morphs",
+        "A transformable sky made of particles",
+        "Smooth morphs across NASA nebulae and galaxies",
+        "Light 3D parallax—tilt the river of stars",
         "A new NASA image form each week",
-        "Light 3D parallax for the particle sky",
         "Open source · github.com/wenhanweime/particle-morph",
       ],
     },
