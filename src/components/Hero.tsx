@@ -12,9 +12,11 @@ export default function Hero() {
           <h1 className="text-[2rem] sm:text-[2.25rem] leading-[1.1] font-semibold tracking-tight text-ink">
             {t.hero.name}
           </h1>
-          <div className="mt-2 text-[13px] text-ink-mute leading-snug space-y-0.5">
+          <div className="mt-2.5 text-[13px] text-ink-mute leading-[1.55] flex flex-col gap-1">
             {t.hero.affiliation.map((line) => (
-              <p key={line}>{line}</p>
+              <p key={line} className="m-0">
+                {line}
+              </p>
             ))}
           </div>
         </div>
