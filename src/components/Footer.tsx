@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="mt-24 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-3">
       <span className="text-[12px] text-ink-mute">
-        &copy; {new Date().getFullYear()} Peter
+        &copy; {new Date().getFullYear()} wenhan
       </span>
       <div className="flex items-center gap-4">
         <a

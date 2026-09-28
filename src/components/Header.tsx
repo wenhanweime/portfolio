@@ -10,7 +10,7 @@ export default function Header() {
         to="/"
         className="text-[15px] font-semibold tracking-tight text-ink hover:text-accent transition-colors"
       >
-        Peter
+        wenhan
       </Link>
       <button
         type="button"

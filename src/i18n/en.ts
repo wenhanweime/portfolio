@@ -1,8 +1,8 @@
 export const en = {
   hero: {
-    name: "Peter",
+    name: "wenhan",
     affiliation: "PKU",
-    bio: "I design and ship AI products, spatial experiences, and small tools. Prefer quiet craft over noise.",
+    bio: "PKU · SCUT. Product manager / indie builder / former architect. Skateboarding and skiing.",
   },
   projects: {
     title: "Work",

@@ -1,8 +1,8 @@
 export const zh = {
   hero: {
-    name: "Peter",
+    name: "wenhan",
     affiliation: "PKU",
-    bio: "做 AI 产品、空间计算体验，以及不打扰人的小工具。少一点喧哗，多一点完成。",
+    bio: "北京大学 · 华南理工大学。产品经理 / 独立开发者 / 前建筑师。爱好滑板、滑雪。",
   },
   projects: {
     title: "作品",

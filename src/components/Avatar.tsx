@@ -6,7 +6,7 @@ type AvatarProps = {
   className?: string;
 };
 
-export default function Avatar({ size = 72, label = "Peter", className = "" }: AvatarProps) {
+export default function Avatar({ size = 72, label = "wenhan", className = "" }: AvatarProps) {
   return (
     <img
       src={asset("/avatar.png")}
