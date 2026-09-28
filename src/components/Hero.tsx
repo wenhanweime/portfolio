@@ -3,7 +3,6 @@ import { useLang } from "../hooks/useLang";
 
 export default function Hero() {
   const { t } = useLang();
-  const affiliationLines = t.hero.affiliation.split("\n").filter(Boolean);
 
   return (
     <section>
@@ -14,7 +13,7 @@ export default function Hero() {
             {t.hero.name}
           </h1>
           <div className="mt-2 text-[13px] text-ink-mute leading-snug space-y-0.5">
-            {affiliationLines.map((line) => (
+            {t.hero.affiliation.map((line) => (
               <p key={line}>{line}</p>
             ))}
           </div>
