@@ -1,8 +1,8 @@
 export const en = {
   hero: {
     name: "wenhan",
-    affiliation: "PKU",
-    bio: "PKU · SCUT. Product manager / indie builder / former architect. Skateboarding and skiing.",
+    affiliation: "PKU · SCUT · Product manager / Indie builder / Former architect · Skateboarding & skiing",
+    bio: "",
   },
   projects: {
     title: "Work",

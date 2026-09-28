@@ -12,15 +12,11 @@ export default function Hero() {
           <h1 className="text-[2rem] sm:text-[2.25rem] leading-[1.1] font-semibold tracking-tight text-ink">
             {t.hero.name}
           </h1>
-          <p className="mt-2 text-[13px] text-ink-mute">
+          <p className="mt-2 text-[13px] text-ink-mute leading-snug max-w-xl">
             {t.hero.affiliation}
           </p>
         </div>
       </div>
-
-      <p className="font-serif-bio text-[17px] sm:text-[18px] text-ink-dim leading-[1.7] max-w-xl">
-        {t.hero.bio}
-      </p>
     </section>
   );
 }
