@@ -3,7 +3,7 @@ export const en = {
     name: "wenhan",
     affiliation: [
       "PKU · SCUT",
-      "Product manager / Indie builder / Former architect",
+      "Product manager / Solo builder",
       "Skateboarding & skiing",
     ],
   },
