@@ -223,6 +223,62 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "rentkoa",
+    name: { zh: "RentKoa", en: "RentKoa" },
+    description: {
+      zh: "KOA = KOL + Agent。把创作者公开主页蒸馏成可协作的 AI 分身，品牌投放 Agent 与创作者分身在事件驱动的订单流里撮合、出稿、审改、跟单——稀疏身份也能跑通多方协作，而不是常驻大 loop 烧资源。",
+      en: "KOA = KOL + Agent. Distill a creator's public profile into a workable AI twin; brand agents and creator twins match, draft, revise, and follow orders on an event-driven flow—sparse identity, multi-party collaboration, without a forever ReAct loop.",
+    },
+    summary: {
+      zh: "AI 分身撮合品牌与创作者",
+      en: "AI twins that match brands with creators",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Google GenAI",
+      "Multi-Agent",
+      "Cloudflare",
+    ],
+    highlights: {
+      zh: [
+        "Digital clone：公开主页 → 风格 / 话题 / 价值画像",
+        "A2A：投放 Agent ↔ 创作者分身，不是人肉私信中介",
+        "事件驱动订单流：匹配 → 出稿 → 审改 → 跟单",
+        "灵感网络：全站创作者选题定时更新，策略分可嗅",
+        "在线规模：上万创作者分身与灵感帖可逛可撮合",
+      ],
+      en: [
+        "Digital clone: public profile → style / topics / value band",
+        "A2A: brand agent ↔ creator twin—not human DM middlemen",
+        "Event-driven order flow: match → draft → revise → follow-up",
+        "Inspiration network: timed topic sparks across creators",
+        "Live scale: tens of thousands of twins and inspiration posts",
+      ],
+    },
+    year: "2025–",
+    cover: "/covers/rentkoa.jpg",
+    gallery: [
+      {
+        src: "/covers/rentkoa.jpg",
+        caption: {
+          zh: "主页 · AI 分身撮合品牌与创作者，吸金榜与推荐流",
+          en: "Home · AI twins matching brands and creators, earnings board and feed",
+        },
+      },
+      {
+        src: "/covers/rentkoa-hero.jpg",
+        caption: {
+          zh: "产品叙事页 · 一键推广 / 截图生成分身接单",
+          en: "Product narrative · one-click promote / screenshot-to-twin onboard",
+        },
+      },
+    ],
+    href: "https://www.rentkoa.xyz",
+    hrefLabel: { zh: "打开站点", en: "Open site" },
+  },
+  {
     id: "particle-morph",
     name: { zh: "Particle Sky", en: "Particle Sky" },
     description: {
