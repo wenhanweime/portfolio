@@ -38,6 +38,10 @@ export const projects: Project[] = [
       zh: "面向人与 Agent 的持久工作层：把分散在会话、Agent、项目里的目标、状态、阻塞与下一步收成一件完整的 Work，换 Agent 也能接着干。",
       en: "The persistent work layer for Agents — keep Goal, Status, Blocker, and Next Steps whole across sessions and tools, so work stays ready to continue.",
     },
+    summary: {
+      zh: "Agent 的持久工作层",
+      en: "The persistent work layer for Agents",
+    },
     techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
     highlights: {
       zh: [
@@ -70,8 +74,8 @@ export const projects: Project[] = [
       en: "Your mind holds a whole universe. StarSay is not another chat box—the main loop keeps the feel light, while a side-path Memory agent every few turns decides what is worth keeping. Daily dreaming compacts fragments into self-knowledge; the Awareness Feed gathers thoughts and feelings; Stars turn insights into cards you can revisit. Memory stops being a black-box vector and becomes something you can see. Ask anything. A star is born. Carry your inner universe on the home screen.",
     },
     summary: {
-      zh: "提问点亮星辰。旁路记忆判断该留下什么，日级 dreaming 收成看得见的宇宙。",
-      en: "Ask anything, and a star is born. Side-path memory keeps what matters; daily dreaming grows a universe you can see.",
+      zh: "把记忆长成看得见的宇宙",
+      en: "Memory that grows into a visible universe",
     },
     techStack: [
       "React",
@@ -220,14 +224,14 @@ export const projects: Project[] = [
   },
   {
     id: "particle-morph",
-    name: { zh: "粒子星空", en: "Particle Sky" },
+    name: { zh: "Particle Sky", en: "Particle Sky" },
     description: {
       zh: "千万粒光点织成一片可触摸的夜空。从真实星云与星系取样布局，形态在呼吸间平滑切换；轻轻拖动，视差让星河微微侧倾。每周一帧 NASA 新图，星空又长出新的样子。",
       en: "A sky woven from countless points of light. Layouts sampled from real nebulae and galaxies morph softly into one another; a gentle drag tilts the river of stars with light parallax. Each week a new NASA image arrives, and the sky grows another face.",
     },
     summary: {
-      zh: "从 NASA 星云取样的可变换粒子星空。拖动有视差，形态会呼吸。",
-      en: "A transformable particle sky sampled from NASA nebulae. Drag for parallax; forms breathe into one another.",
+      zh: "可触摸的 NASA 粒子夜空",
+      en: "A touchable particle sky from NASA",
     },
     techStack: ["Vite", "TypeScript", "Three.js"],
     highlights: {
@@ -258,6 +262,10 @@ export const projects: Project[] = [
       zh: "Apple Vision Pro 原生应用：空间 UI、手势与 3D 场景里的发现 / 地图 / 社交面板。",
       en: "Native Vision Pro app — spatial UI, gesture, and 3D discovery / map / social panels.",
     },
+    summary: {
+      zh: "Vision Pro 上的空间发现",
+      en: "Spatial discovery on Vision Pro",
+    },
     techStack: ["Swift", "SwiftUI", "visionOS", "RealityKit"],
     highlights: {
       zh: [
@@ -286,6 +294,10 @@ export const projects: Project[] = [
       zh: "把 Markdown 收成带配音、字幕与动画的视频。Remotion + TTS。",
       en: "Turn Markdown into narrated, subtitled, animated video. Remotion + TTS.",
     },
+    summary: {
+      zh: "Markdown 一键成片",
+      en: "From Markdown to finished video",
+    },
     techStack: ["React", "Remotion", "TypeScript", "Edge TTS", "FFmpeg"],
     highlights: {
       zh: [
@@ -305,14 +317,14 @@ export const projects: Project[] = [
   },
   {
     id: "us-stock-daily",
-    name: { zh: "美股投研", en: "US Stock Daily" },
+    name: { zh: "US Stock Daily", en: "US Stock Daily" },
     description: {
       zh: "把美股投研沉淀成可检索、可追踪、可复盘的研究站。「每日观察」聚合讨论，「深度研究」沉淀个股与产业链。仅供研究，非投资建议。",
       en: "Searchable research site for US equities — daily digests plus deeper notes on names and supply chains. Research only; not advice.",
     },
     summary: {
-      zh: "每日观察与个股 / 产业链深挖，可检索可复盘。仅供研究。",
-      en: "Daily digests plus deeper notes on names and supply chains. Research only.",
+      zh: "可检索的美股研究站",
+      en: "A searchable US equities research desk",
     },
     techStack: ["Automation", "Research", "GitHub Pages"],
     highlights: {
@@ -334,10 +346,14 @@ export const projects: Project[] = [
   },
   {
     id: "autopublish",
-    name: { zh: "内容自动发布", en: "Content Automation" },
+    name: { zh: "Content Autopublish", en: "Content Autopublish" },
     description: {
       zh: "开源内容流水线：X Lists → LLM 写作 → Telegram 闸门 → Markdown 归档。",
       en: "Open-source pipeline: X Lists → LLM drafts → Telegram gate → Markdown archive.",
+    },
+    summary: {
+      zh: "人审闸门的内容流水线",
+      en: "A human-gated content pipeline",
     },
     techStack: ["Node.js", "Python", "Shell"],
     highlights: {
