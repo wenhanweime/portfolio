@@ -47,7 +47,7 @@ export const projects: Project[] = [
       ],
     },
     year: "2026",
-    cover: "/covers/herduck-v3.jpg",
+    cover: "/covers/herduck-v4.jpg",
     gallery: [
       { src: "/covers/herduck/agents-v2.jpg", caption: { zh: "Agents 分屏", en: "Agents" } },
       { src: "/covers/herduck/work-v2.jpg", caption: { zh: "Work", en: "Work" } },
