@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="flex items-center gap-5 mb-8">
         <Avatar size={88} label={t.hero.name} />
         <div className="min-w-0">
-          <h1 className="text-[2rem] sm:text-[2.25rem] leading-[1.1] font-semibold tracking-tight text-ink">
+          <h1 className="text-[1.5rem] sm:text-[1.75rem] leading-[1.1] font-semibold tracking-tight text-ink">
             {t.hero.name}
           </h1>
           <div className="mt-2.5 text-[13px] text-ink-mute leading-[1.55] flex flex-col gap-1">

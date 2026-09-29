@@ -336,20 +336,20 @@ export const projects: Project[] = [
     id: "autopublish",
     name: { zh: "内容自动发布", en: "Content Automation" },
     description: {
-      zh: "内容从制作到发布的自动化工具链。一次编辑，同步多平台。",
-      en: "Draft-to-publish automation — edit once, sync across platforms.",
+      zh: "开源内容流水线：X Lists → LLM 写作 → Telegram 闸门 → Markdown 归档。",
+      en: "Open-source pipeline: X Lists → LLM drafts → Telegram gate → Markdown archive.",
     },
-    techStack: ["Node.js", "Chrome Extension", "Shell"],
+    techStack: ["Node.js", "Python", "Shell"],
     highlights: {
       zh: [
-        "一次编辑、多平台同步",
-        "Chrome 扩展与管理后台",
-        "定时任务与批量操作",
+        "开源核心流水线（MIT）",
+        "MD-only 默认，人工确认再发布",
+        "热点审计与质量评测",
       ],
       en: [
-        "Edit once, sync to multiple platforms",
-        "Chrome extension plus admin surface",
-        "Scheduling and batch operations",
+        "Open-source core pipeline (MIT)",
+        "MD-only by default; human-in-the-loop publish",
+        "Hotness audit and quality evaluation",
       ],
     },
     year: "2024",
@@ -360,6 +360,8 @@ export const projects: Project[] = [
       { src: "/covers/autopublish/obsidian-2.jpg", caption: { zh: "成品页 3", en: "Finished page 3" } },
       { src: "/covers/autopublish/obsidian-3.jpg", caption: { zh: "成品页 4", en: "Finished page 4" } },
     ],
+    href: "https://github.com/wenhanweime/content-autopublish",
+    hrefLabel: { zh: "GitHub", en: "GitHub" },
   }
 ];
 
