@@ -30,24 +30,24 @@ export const projects: Project[] = [
     id: "herduck",
     name: { zh: "Herduck", en: "Herduck" },
     description: {
-      zh: "面向 AI 编程代理的终端工作区：并排跑 agent、找回历史会话、按项目与主题继续。兼容 Claude Code、Codex、OpenCode、Pi。",
-      en: "Terminal workspace for AI coding agents — split panes, resume sessions, continue by project or topic. Works with Claude Code, Codex, OpenCode, Pi.",
+      zh: "面向人与 Agent 的持久工作层：把分散在会话、Agent、项目里的目标、状态、阻塞与下一步收成一件完整的 Work，换 Agent 也能接着干。",
+      en: "The persistent work layer for Agents — keep Goal, Status, Blocker, and Next Steps whole across sessions and tools, so work stays ready to continue.",
     },
     techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
     highlights: {
       zh: [
-        "多 agent 分屏与会话恢复",
-        "Sessions / Projects / Topics 组织工作",
-        "开源 · github.com/wenhanweime/herduck",
+        "Agents 执行；Herduck 让 Work 持续",
+        "四视图：Work / Agents / Projects / Sessions",
+        "开源 AGPL · github.com/wenhanweime/herduck",
       ],
       en: [
-        "Split panes and session resume for multiple agents",
-        "Sessions, Projects, and Topics to organize work",
-        "Open source · github.com/wenhanweime/herduck",
+        "Agents execute; Herduck keeps the Work continuous",
+        "Four views: Work / Agents / Projects / Sessions",
+        "Open source AGPL · github.com/wenhanweime/herduck",
       ],
     },
     year: "2026",
-    cover: "/covers/herduck-v2.jpg",
+    cover: "/covers/herduck-v3.jpg",
     gallery: [
       { src: "/covers/herduck/agents-v2.jpg", caption: { zh: "Agents 分屏", en: "Agents" } },
       { src: "/covers/herduck/work-v2.jpg", caption: { zh: "Work", en: "Work" } },
