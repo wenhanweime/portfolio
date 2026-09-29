@@ -9,7 +9,7 @@ type AvatarProps = {
 export default function Avatar({ size = 72, label = "wenhan", className = "" }: AvatarProps) {
   return (
     <img
-      src={asset("/avatar.png")}
+      src={asset("/avatar-v2.png")}
       alt={label}
       width={size}
       height={size}
