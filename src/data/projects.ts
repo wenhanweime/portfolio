@@ -17,12 +17,17 @@ export interface Project {
   id: string;
   name: { zh: string; en: string };
   description: { zh: string; en: string };
+  /** Homepage card blurb. Falls back to description. */
+  summary?: { zh: string; en: string };
   techStack: string[];
   highlights: { zh: string[]; en: string[] };
   year: string;
   cover: string;
+  /** Portrait posters should contain; default cover. */
+  coverFit?: "cover" | "contain";
   gallery?: GalleryItem[];
   href?: string;
+  hrefLabel?: { zh: string; en: string };
 }
 
 export const projects: Project[] = [
@@ -55,6 +60,7 @@ export const projects: Project[] = [
       { src: "/covers/herduck/sessions-v2.jpg", caption: { zh: "Sessions", en: "Sessions" } },
     ],
     href: "https://github.com/wenhanweime/herduck",
+    hrefLabel: { zh: "GitHub", en: "GitHub" },
   },
   {
     id: "starsay",
@@ -62,6 +68,10 @@ export const projects: Project[] = [
     description: {
       zh: "你的心里藏着一整座宇宙。StarSay 不是又一个聊天框——主对话负责体验，旁路 Memory Agent 约每五轮轻轻对比过往、判断「这一刻值不值得留下」；日级 dreaming 把碎片收成自我认知；觉察流收集念头与情绪；集星把洞察变成可回看的星卡。Memory 不再是黑盒向量，而是你看得见、摸得着的星辰。Ask anything，点亮一颗星；Widget 把内心宇宙放在主屏幕上，让你愿意继续聊、继续被记住。",
       en: "Your mind holds a whole universe. StarSay is not another chat box—the main loop keeps the feel light, while a side-path Memory agent every few turns decides what is worth keeping. Daily dreaming compacts fragments into self-knowledge; the Awareness Feed gathers thoughts and feelings; Stars turn insights into cards you can revisit. Memory stops being a black-box vector and becomes something you can see. Ask anything. A star is born. Carry your inner universe on the home screen.",
+    },
+    summary: {
+      zh: "提问点亮星辰。旁路记忆判断该留下什么，日级 dreaming 收成看得见的宇宙。",
+      en: "Ask anything, and a star is born. Side-path memory keeps what matters; daily dreaming grows a universe you can see.",
     },
     techStack: [
       "React",
@@ -215,6 +225,10 @@ export const projects: Project[] = [
       zh: "千万粒光点织成一片可触摸的夜空。从真实星云与星系取样布局，形态在呼吸间平滑切换；轻轻拖动，视差让星河微微侧倾。每周一帧 NASA 新图，星空又长出新的样子。",
       en: "A sky woven from countless points of light. Layouts sampled from real nebulae and galaxies morph softly into one another; a gentle drag tilts the river of stars with light parallax. Each week a new NASA image arrives, and the sky grows another face.",
     },
+    summary: {
+      zh: "从 NASA 星云取样的可变换粒子星空。拖动有视差，形态会呼吸。",
+      en: "A transformable particle sky sampled from NASA nebulae. Drag for parallax; forms breathe into one another.",
+    },
     techStack: ["Vite", "TypeScript", "Three.js"],
     highlights: {
       zh: [
@@ -235,6 +249,7 @@ export const projects: Project[] = [
     year: "2026",
     cover: "/covers/particle-morph-v2.jpg",
     href: "https://wenhanweime.github.io/particle-morph/",
+    hrefLabel: { zh: "打开演示", en: "Open demo" },
   },
   {
     id: "mira",
@@ -286,6 +301,7 @@ export const projects: Project[] = [
     },
     year: "2024",
     cover: "/covers/md2video.png",
+    coverFit: "contain",
   },
   {
     id: "us-stock-daily",
@@ -293,6 +309,10 @@ export const projects: Project[] = [
     description: {
       zh: "把美股投研沉淀成可检索、可追踪、可复盘的研究站。「每日观察」聚合讨论，「深度研究」沉淀个股与产业链。仅供研究，非投资建议。",
       en: "Searchable research site for US equities — daily digests plus deeper notes on names and supply chains. Research only; not advice.",
+    },
+    summary: {
+      zh: "每日观察与个股 / 产业链深挖，可检索可复盘。仅供研究。",
+      en: "Daily digests plus deeper notes on names and supply chains. Research only.",
     },
     techStack: ["Automation", "Research", "GitHub Pages"],
     highlights: {
@@ -310,6 +330,7 @@ export const projects: Project[] = [
     year: "2026",
     cover: "/covers/us-stock-daily.jpg",
     href: "https://wenhanweime.github.io/us-stock-daily/",
+    hrefLabel: { zh: "打开站点", en: "Open site" },
   },
   {
     id: "autopublish",

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getProject, type GalleryItem } from "../data/projects";
@@ -68,6 +69,13 @@ export default function ProjectDetail() {
   const { t, lang } = useLang();
   const project = id ? getProject(id) : undefined;
 
+  useEffect(() => {
+    document.title = project ? `${project.name[lang]} · wenhan` : "wenhan";
+    return () => {
+      document.title = "wenhan";
+    };
+  }, [project, lang]);
+
   if (!project) {
     return (
       <div className="pt-4">
@@ -96,7 +104,7 @@ export default function ProjectDetail() {
         {t.projects.back}
       </Link>
 
-      <div className="overflow-hidden rounded-[12px] bg-surface ring-1 ring-line">
+      <div className="overflow-hidden rounded-[12px] bg-surface ring-1 ring-line-strong shadow-[0_1px_2px_rgba(20,20,19,0.04),0_10px_28px_rgba(20,20,19,0.05)]">
         <div className="aspect-[16/10] sm:aspect-[3/2] overflow-hidden">
           <img
             src={asset(project.cover)}
@@ -185,9 +193,9 @@ export default function ProjectDetail() {
           href={project.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-[14px] text-ink-dim hover:text-accent transition-colors"
+          className="inline-flex items-center gap-1.5 text-[14px] font-medium text-accent hover:opacity-80 transition-opacity"
         >
-          {t.projects.open}
+          {project.hrefLabel?.[lang] ?? t.projects.open}
           <ArrowUpRight size={15} strokeWidth={1.75} />
         </a>
       )}
