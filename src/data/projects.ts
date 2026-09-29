@@ -114,6 +114,13 @@ export const projects: Project[] = [
         },
       },
       {
+        src: "/covers/starsay/widget.jpg",
+        caption: {
+          zh: "Widget · 内心宇宙放在主屏幕上，每天看见自己被记住",
+          en: "Widget · Carry your inner universe on the home screen",
+        },
+      },
+      {
         kind: "prose",
         eyebrow: { zh: "记忆成星", en: "Memory becomes a world" },
         title: {
@@ -190,6 +197,13 @@ export const projects: Project[] = [
         caption: {
           zh: "Awareness Feed · 碎片念头收成可回看的觉察记忆",
           en: "Awareness Feed · Scattered thoughts become awareness you can revisit",
+        },
+      },
+      {
+        src: "/covers/starsay/sim-stars.jpg",
+        caption: {
+          zh: "集星 · 洞察变成星卡，Memory 看得见、可回看",
+          en: "Stars · Insights become cards—memory made visible",
         },
       },
     ],
