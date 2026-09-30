@@ -1,62 +1,41 @@
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 import Avatar from "./Avatar";
 import { useLang } from "../hooks/useLang";
-import Workbench from "./Workbench";
 
 export default function Hero() {
   const { t } = useLang();
   return (
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-copy">
-        <div className="identity">
-          <Avatar size={52} label="wenhan" />
-          <div>
-            <span className="identity-name">wenhan</span>
-            <p>{t.hero.role}</p>
-          </div>
+    <aside className="profile" aria-labelledby="profile-name">
+      <div className="profile-identity">
+        <Avatar size={80} label="wenhan" />
+        <div>
+          <h1 id="profile-name">wenhan</h1>
+          <p className="profile-role">{t.hero.role}</p>
         </div>
-        <h1 id="hero-title">
-          {t.hero.line1}
-          <br />
-          <span>{t.hero.line2}</span>
-        </h1>
-        <p className="hero-description">{t.hero.description}</p>
-        <div className="hero-actions">
-          <a
-            className="button button-primary"
-            href="#/"
-            onClick={(event) => {
-              event.preventDefault();
-              document
-                .getElementById("selected-work")
-                ?.scrollIntoView({
-                  behavior: window.matchMedia(
-                    "(prefers-reduced-motion: reduce)",
-                  ).matches
-                    ? "instant"
-                    : "smooth",
-                });
-            }}
-          >
-            {t.hero.explore}
-            <ArrowDown size={16} />
-          </a>
-          <a
-            className="text-link"
-            href="https://github.com/wenhanweime"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-            <ArrowUpRight size={16} />
-          </a>
-        </div>
-        <p className="hero-personal">
-          PKU · SCUT<span aria-hidden="true">/</span>
-          {t.hero.personal}
-        </p>
       </div>
-      <Workbench />
-    </section>
+      <p className="profile-greeting">{t.hero.greeting}</p>
+      <p className="profile-bio">{t.hero.description}</p>
+      <p className="profile-now">
+        {t.hero.now}
+        <Link to="/project/herduck">Herduck</Link>
+        {t.hero.and}
+        <Link to="/project/starsay">StarSay</Link>
+        {t.hero.nowEnd}
+      </p>
+      <a
+        className="profile-link"
+        href="https://github.com/wenhanweime"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+        <ArrowUpRight size={14} />
+      </a>
+      <div className="profile-footnotes">
+        <p>PKU · SCUT</p>
+        <p>{t.hero.personal}</p>
+      </div>
+    </aside>
   );
 }

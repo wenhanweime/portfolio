@@ -39,8 +39,8 @@ export const projects: Project[] = [
       en: "The persistent work layer for Agents — keep Goal, Status, Blocker, and Next Steps whole across sessions and tools, so work stays ready to continue.",
     },
     summary: {
-      zh: "Agent 的持久工作层",
-      en: "The persistent work layer for Agents",
+      zh: "把 Agent 窗口、项目和会话放到一起的工作台",
+      en: "A workspace for agent windows, projects, and sessions",
     },
     techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
     highlights: {
@@ -74,8 +74,8 @@ export const projects: Project[] = [
       en: "Your mind holds a whole universe. StarSay is not another chat box—the main loop keeps the feel light, while a side-path Memory agent every few turns decides what is worth keeping. Daily dreaming compacts fragments into self-knowledge; the Awareness Feed gathers thoughts and feelings; Stars turn insights into cards you can revisit. Memory stops being a black-box vector and becomes something you can see. Ask anything. A star is born. Carry your inner universe on the home screen.",
     },
     summary: {
-      zh: "把记忆长成看得见的宇宙",
-      en: "Memory that grows into a visible universe",
+      zh: "用星卡和像素星球记录对话与觉察的 AI 应用",
+      en: "An AI memory app with star cards and pixel planets",
     },
     techStack: [
       "React",
@@ -230,8 +230,8 @@ export const projects: Project[] = [
       en: "KOA = KOL + Agent. Distill a creator's public profile into a workable AI twin; brand agents and creator twins match, draft, revise, and follow orders on an event-driven flow—sparse identity, multi-party collaboration, without a forever ReAct loop.",
     },
     summary: {
-      zh: "AI 分身撮合品牌与创作者",
-      en: "AI twins that match brands with creators",
+      zh: "用 AI 分身连接品牌需求与创作者的协作平台",
+      en: "A platform connecting brands and creators through AI twins",
     },
     techStack: [
       "React",

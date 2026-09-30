@@ -92,4 +92,3 @@ export const caseStudies: Record<string, CaseStudy> = {
     capabilities: ["Multi-agent", "Google GenAI", "Cloudflare"],
   },
 };
-export const featuredIds = ["herduck", "starsay", "rentkoa"];
