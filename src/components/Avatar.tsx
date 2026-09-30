@@ -1,0 +1,21 @@
+import { asset } from "../lib/asset";
+
+type AvatarProps = {
+  size?: number;
+  label?: string;
+  className?: string;
+};
+
+export default function Avatar({ size = 72, label = "wenhan", className = "" }: AvatarProps) {
+  return (
+    <img
+      src={asset("/avatar-v2.png")}
+      alt={label}
+      width={size}
+      height={size}
+      className={`avatar-mark ${className}`.trim()}
+      style={{ width: size, height: size }}
+      decoding="async"
+    />
+  );
+}

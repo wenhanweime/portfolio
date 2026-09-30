@@ -1,93 +1,443 @@
+export type GalleryItem =
+  | {
+      kind?: "image";
+      src: string;
+      caption?: { zh: string; en: string };
+      /** full-bleed black plate for planet grids */
+      full?: boolean;
+    }
+  | {
+      kind: "prose";
+      eyebrow?: { zh: string; en: string };
+      title: { zh: string; en: string };
+      body: { zh: string; en: string };
+    };
+
 export interface Project {
   id: string;
   name: { zh: string; en: string };
-  category: { zh: string; en: string };
-  tagColor: string;
   description: { zh: string; en: string };
+  /** Homepage card blurb. Falls back to description. */
+  summary?: { zh: string; en: string };
   techStack: string[];
   highlights: { zh: string[]; en: string[] };
   year: string;
+  cover: string;
+  /** Portrait posters should contain; default cover. */
+  coverFit?: "cover" | "contain";
+  gallery?: GalleryItem[];
+  href?: string;
+  hrefLabel?: { zh: string; en: string };
 }
 
 export const projects: Project[] = [
   {
-    id: "staroracle",
-    name: { zh: "\u661f\u8c15 StarOracle", en: "StarOracle" },
-    category: { zh: "\u6838\u5fc3\u4ea7\u54c1", en: "Core Product" },
-    tagColor: "#3b82f6",
+    id: "herduck",
+    name: { zh: "Herduck", en: "Herduck" },
     description: {
-      zh: "\u4e00\u6b3e\u661f\u5ea7\u4ea4\u4e92\u4ea7\u54c1\uff0c\u8ba9\u7528\u6237\u901a\u8fc7\u661f\u76d8\u4e0e AI \u5bf9\u8bdd\u63a2\u7d22\u81ea\u6211\u3002\u4ece\u4e00\u4e2a Web \u539f\u578b\u51fa\u53d1\uff0c\u8fed\u4ee3 6 \u6b21\u67b6\u6784\uff0c\u6210\u957f\u4e3a\u8986\u76d6 Web\u3001iOS\u3001Android \u7684\u5168\u5e73\u53f0\u4ea7\u54c1\uff0c\u62e5\u6709\u5b8c\u6574\u7684\u7528\u6237\u7cfb\u7edf\u4e0e\u661f\u76d8\u53ef\u89c6\u5316\u5f15\u64ce\u3002",
-      en: "An astrology interactive product that lets users explore themselves through star charts and AI dialogue. Evolved from a web prototype through 6 architecture iterations into a full-platform product covering Web, iOS, and Android, with a complete user system and star chart visualization engine.",
+      zh: "面向人与 Agent 的持久工作层：把分散在会话、Agent、项目里的目标、状态、阻塞与下一步收成一件完整的 Work，换 Agent 也能接着干。",
+      en: "The persistent work layer for Agents — keep Goal, Status, Blocker, and Next Steps whole across sessions and tools, so work stays ready to continue.",
     },
-    techStack: ["React", "TypeScript", "React Native", "Capacitor", "Node.js", "Supabase", "UniApp", "Tailwind CSS"],
+    summary: {
+      zh: "Agent 的持久工作层",
+      en: "The persistent work layer for Agents",
+    },
+    techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
     highlights: {
-      zh: ["\u4ece Web \u539f\u578b\u5230\u5168\u5e73\u53f0\u4ea7\u54c1\u7684\u5b8c\u6574\u8fed\u4ee3", "\u81ea\u7814\u661f\u76d8\u53ef\u89c6\u5316\u5f15\u64ce", "AI \u9a71\u52a8\u7684\u4e2a\u6027\u5316\u661f\u5ea7\u5bf9\u8bdd", "\u8de8 6 \u4e2a\u6280\u672f\u67b6\u6784\u7684\u6280\u672f\u6f14\u8fdb"],
-      en: ["Full iteration from web prototype to full-platform product", "Proprietary star chart visualization engine", "AI-driven personalized astrology dialogue", "Technical evolution across 6 architectures"],
+      zh: [
+        "Agents 执行；Herduck 让 Work 持续",
+        "四视图：Work / Agents / Projects / Sessions",
+        "开源 AGPL · github.com/wenhanweime/herduck",
+      ],
+      en: [
+        "Agents execute; Herduck keeps the Work continuous",
+        "Four views: Work / Agents / Projects / Sessions",
+        "Open source AGPL · github.com/wenhanweime/herduck",
+      ],
     },
-    year: "2024",
+    year: "2026",
+    cover: "/covers/herduck-v4.jpg",
+    gallery: [
+      { src: "/covers/herduck/agents-v2.jpg", caption: { zh: "Agents 分屏", en: "Agents" } },
+      { src: "/covers/herduck/work-v2.jpg", caption: { zh: "Work", en: "Work" } },
+      { src: "/covers/herduck/projects-v2.jpg", caption: { zh: "Projects", en: "Projects" } },
+      { src: "/covers/herduck/sessions-v2.jpg", caption: { zh: "Sessions", en: "Sessions" } },
+    ],
+    href: "https://github.com/wenhanweime/herduck",
+    hrefLabel: { zh: "GitHub", en: "GitHub" },
+  },
+  {
+    id: "starsay",
+    name: { zh: "StarSay", en: "StarSay" },
+    description: {
+      zh: "你的心里藏着一整座宇宙。StarSay 不是又一个聊天框——主对话负责体验，旁路 Memory Agent 约每五轮轻轻对比过往、判断「这一刻值不值得留下」；日级 dreaming 把碎片收成自我认知；觉察流收集念头与情绪；集星把洞察变成可回看的星卡。Memory 不再是黑盒向量，而是你看得见、摸得着的星辰。Ask anything，点亮一颗星；Widget 把内心宇宙放在主屏幕上，让你愿意继续聊、继续被记住。",
+      en: "Your mind holds a whole universe. StarSay is not another chat box—the main loop keeps the feel light, while a side-path Memory agent every few turns decides what is worth keeping. Daily dreaming compacts fragments into self-knowledge; the Awareness Feed gathers thoughts and feelings; Stars turn insights into cards you can revisit. Memory stops being a black-box vector and becomes something you can see. Ask anything. A star is born. Carry your inner universe on the home screen.",
+    },
+    summary: {
+      zh: "把记忆长成看得见的宇宙",
+      en: "Memory that grows into a visible universe",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "React Native",
+      "Capacitor",
+      "Node.js",
+      "Supabase",
+      "Tailwind CSS",
+      "WebGL Pixel Planets",
+    ],
+    highlights: {
+      zh: [
+        "内心宇宙：提问点亮星辰，反思长成只属于你的星系",
+        "旁路 Memory Agent：主对话不堵，约每 5 轮抽取觉察与新事实",
+        "日级 dreaming / compact：跨会话总结，次日可见「昨日变化」",
+        "Memory 外显：星卡可收集、可回看——看见自己被记住",
+        "觉察流：碎片念头与情绪，收成一条可检索的觉察记忆",
+        "Planets × 像素星球：主题星系入口，单星可拉满分辨率转动",
+        "低摩擦补 context：灵感 / 点选也能攒记忆，不只靠打字",
+        "跨端：Web / iOS / Android，Widget 把宇宙带在身边",
+      ],
+      en: [
+        "Inner universe: every ask lights a star; reflections grow your galaxy",
+        "Side-path Memory agent: main chat stays light; ~every 5 turns extract what matters",
+        "Daily dreaming / compact: cross-session self-knowledge, visible the next day",
+        "Memory made visible: collectible star cards you can trust and revisit",
+        "Awareness Feed: scattered thoughts become a searchable stream",
+        "Planets × pixel worlds: theme galaxies, single planets at max resolution",
+        "Low-friction context: inspiration taps feed memory—not only typing",
+        "Web / iOS / Android, with a home-screen widget for your cosmos",
+      ],
+    },
+    year: "2024–",
+    cover: "/covers/starsay-card.jpg",
+    gallery: [
+      {
+        src: "/covers/starsay/marketing-strip.jpg",
+        caption: {
+          zh: "内心宇宙的四扇窗 · Ask 点亮 / Galaxy 生长 / Inspire 轻声回答 / Widget 随身携带",
+          en: "Four windows into the self · Ask lights a star / Galaxy grows / Inspire answers softly / Widget stays close",
+        },
+      },
+      {
+        src: "/covers/starsay/sim-galaxy.jpg",
+        full: true,
+        caption: {
+          zh: "主页银河 · 轻触星河，说说你的困惑——提问由此点亮成星",
+          en: "Home galaxy · Touch the sky, ask anything—every question can light a star",
+        },
+      },
+      {
+        src: "/covers/starsay/widget.jpg",
+        caption: {
+          zh: "Widget · 内心宇宙放在主屏幕上，每天看见自己被记住",
+          en: "Widget · Carry your inner universe on the home screen",
+        },
+      },
+      {
+        kind: "prose",
+        eyebrow: { zh: "记忆成星", en: "Memory becomes a world" },
+        title: {
+          zh: "每一段值得留下的觉察，都会长成一颗星球",
+          en: "Every awareness worth keeping grows into a planet",
+        },
+        body: {
+          zh: "StarSay 里的星球不是皮肤，是 Memory 的外形。你提问、点选灵感、写下情绪——旁路记忆轻轻判断「这一刻要不要留下」；留下的，就落成可回望的世界。下面三组气质，对应你与自己相处的三种方式。",
+          en: "In StarSay, a planet is not chrome—it is the shape of memory. You ask, tap an inspire card, name a feeling; a side-path memory quietly decides what to keep. What remains becomes a world you can revisit. The three temperaments below map how you meet yourself.",
+        },
+      },
+      {
+        kind: "prose",
+        eyebrow: { zh: "宜居之地", en: "Habitable ground" },
+        title: {
+          zh: "有海有岸，也有霜与绿洲",
+          en: "Shores, frost, and quiet green",
+        },
+        body: {
+          zh: "日常的念头、温和的情绪、还说得清的困惑——当你愿意把它们收进觉察流，记忆会长成可居住的星球：湿润陆海、干旱陆地、群岛与冰世界。不是打卡，是让普通的一天，也有地方安住。",
+          en: "Everyday thoughts, gentle moods, confusions you can still name—when you let them into the Awareness Feed, memory grows habitable: wet terran, dry land, islands, ice. Not a streak. A place for ordinary days to rest.",
+        },
+      },
+      {
+        src: "/covers/starsay/planet-grid-habitable-v2.gif",
+        full: true,
+        caption: {
+          zh: "湿润陆海 · 干旱 · 群岛 · 冰世界",
+          en: "Wet terran · Dry · Islands · Ice",
+        },
+      },
+      {
+        kind: "prose",
+        eyebrow: { zh: "极端之境", en: "Extreme weather" },
+        title: {
+          zh: "熔岩与荒石，也配被认真记住",
+          en: "Lava and barren stone deserve to be kept",
+        },
+        body: {
+          zh: "愤怒、空洞、说不出口的夜晚——不必先把自己修成温柔。选一颗烈星收纳它：熔岩、无大气、小行星、气态巨物。Memory 只在真实时才值得信任；星卡让你日后看见：那段火，也曾是你。",
+          en: "Anger, hollowness, nights without words—you need not sand yourself soft first. Keep them as fierce worlds: lava, airless rock, asteroid, gas giant. Memory earns trust only when it is honest; star cards let you see later that the fire was you, too.",
+        },
+      },
+      {
+        src: "/covers/starsay/planet-grid-extreme-v2.gif",
+        full: true,
+        caption: {
+          zh: "熔岩 · 无大气 · 小行星 · 气态巨行星",
+          en: "Lava · Airless · Asteroid · Gas giant",
+        },
+      },
+      {
+        kind: "prose",
+        eyebrow: { zh: "更远的宇宙", en: "Farther cosmos" },
+        title: {
+          zh: "问得更大时，星会往深处亮",
+          en: "Ask larger, and stars light farther out",
+        },
+        body: {
+          zh: "关于意义、消失、与「我究竟是谁」——当你 Ask anything，答案不必停在对话里。环带气态、恒星、黑洞与星系：集星把洞察收成可收藏的远方。看见自己被记住，你才更愿意继续聊，继续把内心宇宙长成河系。",
+          en: "Meaning, vanishing, who you are—when you ask anything, the answer need not end in chat. Ringed gas, star, black hole, galaxy: Stars collect insight into a far place you can hold. Seeing what was kept makes you want to keep talking—and grow your inner universe into a river of light.",
+        },
+      },
+      {
+        src: "/covers/starsay/planet-grid-cosmic-v2.gif",
+        full: true,
+        caption: {
+          zh: "环带气态 · 恒星 · 黑洞 · 星系",
+          en: "Ringed gas · Star · Black hole · Galaxy",
+        },
+      },
+      {
+        src: "/covers/starsay/sim-awareness.jpg",
+        caption: {
+          zh: "Awareness Feed · 碎片念头收成可回看的觉察记忆",
+          en: "Awareness Feed · Scattered thoughts become awareness you can revisit",
+        },
+      },
+      {
+        src: "/covers/starsay/sim-stars.jpg",
+        caption: {
+          zh: "集星 · 洞察变成星卡，Memory 看得见、可回看",
+          en: "Stars · Insights become cards—memory made visible",
+        },
+      },
+    ],
+  },
+  {
+    id: "rentkoa",
+    name: { zh: "RentKoa", en: "RentKoa" },
+    description: {
+      zh: "KOA = KOL + Agent。把创作者公开主页蒸馏成可协作的 AI 分身，品牌投放 Agent 与创作者分身在事件驱动的订单流里撮合、出稿、审改、跟单——稀疏身份也能跑通多方协作，而不是常驻大 loop 烧资源。",
+      en: "KOA = KOL + Agent. Distill a creator's public profile into a workable AI twin; brand agents and creator twins match, draft, revise, and follow orders on an event-driven flow—sparse identity, multi-party collaboration, without a forever ReAct loop.",
+    },
+    summary: {
+      zh: "AI 分身撮合品牌与创作者",
+      en: "AI twins that match brands with creators",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Google GenAI",
+      "Multi-Agent",
+      "Cloudflare",
+    ],
+    highlights: {
+      zh: [
+        "Digital clone：公开主页 → 风格 / 话题 / 价值画像",
+        "A2A：投放 Agent ↔ 创作者分身，不是人肉私信中介",
+        "事件驱动订单流：匹配 → 出稿 → 审改 → 跟单",
+        "灵感网络：全站创作者选题定时更新，策略分可嗅",
+        "在线规模：上万创作者分身与灵感帖可逛可撮合",
+      ],
+      en: [
+        "Digital clone: public profile → style / topics / value band",
+        "A2A: brand agent ↔ creator twin—not human DM middlemen",
+        "Event-driven order flow: match → draft → revise → follow-up",
+        "Inspiration network: timed topic sparks across creators",
+        "Live scale: tens of thousands of twins and inspiration posts",
+      ],
+    },
+    year: "2025–",
+    cover: "/covers/rentkoa.jpg",
+    gallery: [
+      {
+        src: "/covers/rentkoa.jpg",
+        caption: {
+          zh: "主页 · AI 分身撮合品牌与创作者，吸金榜与推荐流",
+          en: "Home · AI twins matching brands and creators, earnings board and feed",
+        },
+      },
+      {
+        src: "/covers/rentkoa-hero.jpg",
+        caption: {
+          zh: "产品叙事页 · 一键推广 / 截图生成分身接单",
+          en: "Product narrative · one-click promote / screenshot-to-twin onboard",
+        },
+      },
+    ],
+    href: "https://www.rentkoa.xyz",
+    hrefLabel: { zh: "打开站点", en: "Open site" },
+  },
+  {
+    id: "particle-morph",
+    name: { zh: "Particle Sky", en: "Particle Sky" },
+    description: {
+      zh: "千万粒光点织成一片可触摸的夜空。从真实星云与星系取样布局，形态在呼吸间平滑切换；轻轻拖动，视差让星河微微侧倾。每周一帧 NASA 新图，星空又长出新的样子。",
+      en: "A sky woven from countless points of light. Layouts sampled from real nebulae and galaxies morph softly into one another; a gentle drag tilts the river of stars with light parallax. Each week a new NASA image arrives, and the sky grows another face.",
+    },
+    summary: {
+      zh: "可触摸的 NASA 粒子夜空",
+      en: "A touchable particle sky from NASA",
+    },
+    techStack: ["Vite", "TypeScript", "Three.js"],
+    highlights: {
+      zh: [
+        "粒子模拟的可变换星空",
+        "NASA 星云与星系形态平滑切换",
+        "轻量 3D 视差，星河可侧倾",
+        "每周更新一张 NASA 新图形态",
+        "开源 · github.com/wenhanweime/particle-morph",
+      ],
+      en: [
+        "A transformable sky made of particles",
+        "Smooth morphs across NASA nebulae and galaxies",
+        "Light 3D parallax—tilt the river of stars",
+        "A new NASA image form each week",
+        "Open source · github.com/wenhanweime/particle-morph",
+      ],
+    },
+    year: "2026",
+    cover: "/covers/particle-morph-v2.jpg",
+    href: "https://wenhanweime.github.io/particle-morph/",
+    hrefLabel: { zh: "打开演示", en: "Open demo" },
   },
   {
     id: "mira",
     name: { zh: "MIRA", en: "MIRA" },
-    category: { zh: "\u7a7a\u95f4\u8ba1\u7b97", en: "Spatial Computing" },
-    tagColor: "#8b5cf6",
     description: {
-      zh: "\u4e00\u6b3e\u8dd1\u5728 Apple Vision Pro \u4e0a\u7684\u539f\u751f\u5e94\u7528\uff0c\u63a2\u7d22\u7a7a\u95f4\u8ba1\u7b97\u5982\u4f55\u6539\u53d8\u4eba\u4eec\u4e0e\u6570\u5b57\u5185\u5bb9\u7684\u4ea4\u4e92\u65b9\u5f0f\u3002\u7528 Swift \u4ece\u96f6\u6784\u5efa\uff0c\u591a\u8f6e\u8fed\u4ee3\u63a2\u7d22\u7a7a\u95f4 UI\u3001\u624b\u52bf\u4ea4\u4e92\u4e0e 3D \u6e32\u67d3\u7684\u6700\u4f73\u5b9e\u8df5\u3002",
-      en: "A native app for Apple Vision Pro, exploring how spatial computing changes our interaction with digital content. Built from scratch in Swift, with multiple iterations exploring spatial UI, gesture interaction, and 3D rendering best practices.",
+      zh: "Apple Vision Pro 原生应用：空间 UI、手势与 3D 场景里的发现 / 地图 / 社交面板。",
+      en: "Native Vision Pro app — spatial UI, gesture, and 3D discovery / map / social panels.",
     },
-    techStack: ["Swift", "SwiftUI", "visionOS", "Xcode", "RealityKit"],
+    summary: {
+      zh: "Vision Pro 上的空间发现",
+      en: "Spatial discovery on Vision Pro",
+    },
+    techStack: ["Swift", "SwiftUI", "visionOS", "RealityKit"],
     highlights: {
-      zh: ["\u63a2\u7d22\u7a7a\u95f4\u8ba1\u7b97\u7684\u4ea4\u4e92\u8303\u5f0f", "Vision Pro \u539f\u751f\u5f00\u53d1\u4f53\u9a8c", "\u4ece\u96f6\u6784\u5efa\u7a7a\u95f4 UI \u7ec4\u4ef6\u5e93", "\u591a\u8f6e\u6280\u672f\u65b9\u6848\u8fed\u4ee3"],
-      en: ["Exploring spatial computing interaction paradigms", "Native Vision Pro development experience", "Built spatial UI component library from scratch", "Multiple technical approach iterations"],
+      zh: [
+        "visionOS 玻璃拟态空间界面",
+        "附近推荐 Feed + 三维地图导航",
+        "沉浸态下的模型放置与校准",
+      ],
+      en: [
+        "visionOS glassmorphic spatial UI",
+        "Nearby feed plus 3D map navigation",
+        "Immersive model placement and calibration",
+      ],
     },
     year: "2025",
+    cover: "/covers/mira.jpg",
+    gallery: [
+      { src: "/covers/mira/spatial-2.jpg", caption: { zh: "空间双窗 · 展览详情", en: "Spatial dual windows" } },
+      { src: "/covers/mira/spatial-1.jpg", caption: { zh: "发现 / 地图 / 个人中心", en: "Discover / map / profile" } },
+      { src: "/covers/mira/immersive.jpg", caption: { zh: "沉浸态模型放置", en: "Immersive placement" } },
+    ],
   },
   {
     id: "md2video",
     name: { zh: "md2video", en: "md2video" },
-    category: { zh: "\u5185\u5bb9\u751f\u4ea7", en: "Content Production" },
-    tagColor: "#f97316",
     description: {
-      zh: "\u8ba9\u5199\u4f5c\u8005\u53ea\u9700\u4e13\u6ce8\u5185\u5bb9\uff0c\u5c31\u80fd\u81ea\u52a8\u751f\u6210\u5e26\u914d\u97f3\u3001\u5b57\u5e55\u548c\u52a8\u753b\u7684\u89c6\u9891\u3002\u57fa\u4e8e Remotion \u6784\u5efa\uff0c\u96c6\u6210 TTS \u8bed\u97f3\u5408\u6210\uff0c\u5c06 Markdown \u5199\u4f5c\u4e0e\u89c6\u9891\u5236\u4f5c\u7684\u9e38\u77e9\u6253\u7834\u3002",
-      en: "Lets creators focus on content while automatically generating videos with narration, subtitles, and animations. Built on Remotion with TTS integration, breaking the barrier between Markdown writing and video production.",
+      zh: "把 Markdown 收成带配音、字幕与动画的视频。Remotion + TTS。",
+      en: "Turn Markdown into narrated, subtitled, animated video. Remotion + TTS.",
+    },
+    summary: {
+      zh: "Markdown 一键成片",
+      en: "From Markdown to finished video",
     },
     techStack: ["React", "Remotion", "TypeScript", "Edge TTS", "FFmpeg"],
     highlights: {
-      zh: ["\u5199\u4f5c\u4e0e\u89c6\u9891\u5236\u4f5c\u7684\u8fb9\u754c\u88ab\u6253\u7834", "\u4ece\u6587\u672c\u5230\u89c6\u9891\u7684\u5168\u81ea\u52a8\u5316", "TTS \u8bed\u97f3\u5408\u6210\u96c6\u6210", "\u591a\u6a21\u677f\u573a\u666f\u652f\u6301"],
-      en: ["Breaking the boundary between writing and video production", "Full automation from text to video", "TTS voice synthesis integration", "Multi-template scene support"],
+      zh: [
+        "文本到成片的自动化链路",
+        "TTS 语音合成集成",
+        "多模板场景支持",
+      ],
+      en: [
+        "Automated path from text to finished video",
+        "TTS narration integration",
+        "Multi-template scene support",
+      ],
     },
     year: "2024",
+    cover: "/covers/md2video.png",
+    coverFit: "contain",
   },
   {
-    id: "kolbot",
-    name: { zh: "KolBot", en: "KolBot" },
-    category: { zh: "AI Agent", en: "AI Agent" },
-    tagColor: "#8b5cf6",
+    id: "us-stock-daily",
+    name: { zh: "US Stock Daily", en: "US Stock Daily" },
     description: {
-      zh: "\u4e00\u4e2a\u8ba9\u5185\u5bb9\u521b\u4f5c\u8005\u7528 AI \u7406\u89e3\u5e73\u53f0\u8d8b\u52bf\u7684\u5de5\u5177\u3002\u81ea\u52a8\u722c\u53d6\u5c0f\u7ea2\u4e66\u5185\u5bb9\uff0c\u7528 AI \u5206\u6790\u70ed\u95e8\u8bdd\u9898\u4e0e\u7ade\u54c1\u7b56\u7565\uff0c\u8ba9\u6570\u636a\u51b3\u7b56\u53d8\u5f97\u76f4\u89c2\u3002",
-      en: "A tool that lets content creators understand platform trends with AI. Automatically crawls Xiaohongshu content, uses AI to analyze hot topics and competitor strategies, making data-driven decisions intuitive.",
+      zh: "把美股投研沉淀成可检索、可追踪、可复盘的研究站。「每日观察」聚合讨论，「深度研究」沉淀个股与产业链。仅供研究，非投资建议。",
+      en: "Searchable research site for US equities — daily digests plus deeper notes on names and supply chains. Research only; not advice.",
     },
-    techStack: ["Next.js", "React", "Node.js", "PostgreSQL", "Puppeteer"],
+    summary: {
+      zh: "可检索的美股研究站",
+      en: "A searchable US equities research desk",
+    },
+    techStack: ["Automation", "Research", "GitHub Pages"],
     highlights: {
-      zh: ["AI \u9a71\u52a8\u7684\u5185\u5bb9\u8d8b\u52bf\u5206\u6790", "\u81ea\u52a8\u5316\u7ade\u54c1\u76d1\u63a7", "\u6570\u636e\u53ef\u89c6\u5316\u51b3\u7b56\u770b\u677f", "Next.js \u5168\u6808\u67b6\u6784"],
-      en: ["AI-driven content trend analysis", "Automated competitor monitoring", "Data visualization decision dashboard", "Next.js full-stack architecture"],
+      zh: [
+        "每日自动更新的观察日报",
+        "个股 / 产业链深度研报",
+        "顶部搜索同时过滤研报与日报",
+      ],
+      en: [
+        "Automatically updated daily digests",
+        "Deep dives on stocks and industry chains",
+        "Unified search across reports and dailies",
+      ],
     },
-    year: "2024",
+    year: "2026",
+    cover: "/covers/us-stock-daily.jpg",
+    href: "https://wenhanweime.github.io/us-stock-daily/",
+    hrefLabel: { zh: "打开站点", en: "Open site" },
   },
   {
     id: "autopublish",
-    name: { zh: "\u5185\u5bb9\u81ea\u52a8\u53d1\u5e03", en: "Content Automation" },
-    category: { zh: "\u589e\u957f\u5de5\u5177", en: "Growth Tool" },
-    tagColor: "#10b981",
+    name: { zh: "Content Autopublish", en: "Content Autopublish" },
     description: {
-      zh: "\u4e00\u5957\u8ba9\u5185\u5bb9\u4ece\u5236\u4f5c\u5230\u53d1\u5e03\u5168\u6d41\u7a0b\u81ea\u52a8\u5316\u7684\u5de5\u5177\u94fe\u3002\u4e00\u6b21\u7f16\u8f91\uff0c\u540c\u6b65\u53d1\u5e03\u5230\u5c0f\u7ea2\u4e66\u3001\u5fae\u535a\u3001Twitter \u7b49\u591a\u4e2a\u5e73\u53f0\uff0c\u8ba9\u521b\u4f5c\u8005\u4e13\u6ce8\u5185\u5bb9\u800c\u975e\u64cd\u4f5c\u3002",
-      en: "An automation toolchain that streamlines content from creation to publishing. Edit once, sync to Xiaohongshu, Weibo, Twitter and more, letting creators focus on content, not operations.",
+      zh: "开源内容流水线：X Lists → LLM 写作 → Telegram 闸门 → Markdown 归档。",
+      en: "Open-source pipeline: X Lists → LLM drafts → Telegram gate → Markdown archive.",
     },
-    techStack: ["Node.js", "Chrome Extension", "Shell Script", "HTML/CSS"],
+    summary: {
+      zh: "人审闸门的内容流水线",
+      en: "A human-gated content pipeline",
+    },
+    techStack: ["Node.js", "Python", "Shell"],
     highlights: {
-      zh: ["\u4e00\u6b21\u7f16\u8f91\u591a\u5e73\u53f0\u540c\u6b65", "Chrome \u6269\u5c55 + Web \u7ba1\u7406\u540e\u53f0", "\u5b9a\u65f6\u4efb\u52a1\u81ea\u52a8\u53d1\u5e03", "\u5185\u5bb9\u6a21\u677f\u4e0e\u6279\u91cf\u64cd\u4f5c"],
-      en: ["Edit once, sync to multiple platforms", "Chrome extension + Web dashboard", "Scheduled automatic publishing", "Content templates and batch operations"],
+      zh: [
+        "开源核心流水线（MIT）",
+        "MD-only 默认，人工确认再发布",
+        "热点审计与质量评测",
+      ],
+      en: [
+        "Open-source core pipeline (MIT)",
+        "MD-only by default; human-in-the-loop publish",
+        "Hotness audit and quality evaluation",
+      ],
     },
     year: "2024",
-  },
+    cover: "/covers/content-automation.jpg",
+    gallery: [
+      { src: "/covers/autopublish/obsidian-forest-cover.jpg", caption: { zh: "Obsidian 森林清晨 · 成品", en: "Obsidian Forest Morning · finished" } },
+      { src: "/covers/autopublish/obsidian-1.jpg", caption: { zh: "成品页 2", en: "Finished page 2" } },
+      { src: "/covers/autopublish/obsidian-2.jpg", caption: { zh: "成品页 3", en: "Finished page 3" } },
+      { src: "/covers/autopublish/obsidian-3.jpg", caption: { zh: "成品页 4", en: "Finished page 4" } },
+    ],
+    href: "https://github.com/wenhanweime/content-autopublish",
+    hrefLabel: { zh: "GitHub", en: "GitHub" },
+  }
 ];
+
+export function getProject(id: string): Project | undefined {
+  if (id === "staroracle") return projects.find((p) => p.id === "starsay");
+  return projects.find((p) => p.id === id);
+}
