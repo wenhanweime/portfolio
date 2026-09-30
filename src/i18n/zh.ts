@@ -4,7 +4,7 @@ export const zh = {
     name: "wenhan",
     role: "独立开发者 · 产品经理",
     pageTitle: "wenhan · 个人作品集",
-    greeting: "你好，我是文翰。",
+    greeting: "你好，我是 wenhan。",
     description:
       "我喜欢自己做东西。从 Agent 工具、AI 记忆应用，到空间交互和一些自动化小工具。这里放着我做过的作品。",
     now: "最近在做 ",

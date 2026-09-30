@@ -5,7 +5,7 @@ V2 looked like a product landing page. This revision centers the person and lets
 - Name and avatar are the main identity; short first-person introduction, current projects, school background, and interests replace the headline pitch.
 - A quiet left profile and a compact two-column collection on desktop; profile followed by projects on mobile.
 - Neutral off-white, charcoal text, muted green links. No primary conversion CTA, product switcher, alternating feature panels, or capability manifesto.
-- Actual Herduck interface and a paired StarSay screen layout replace their homepage promotional covers.
+- Preserve the original Herduck and StarSay cover images from project metadata. Use `wenhan` in the personal introduction; no Chinese personal name.
 - All eight projects remain visible. Each has project notes and, when available, a code or product link.
 - Existing case studies, galleries, bilingual support, and legacy routes stay available.
 

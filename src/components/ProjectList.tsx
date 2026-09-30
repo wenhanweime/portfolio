@@ -20,35 +20,14 @@ export default function ProjectList() {
               to={`/project/${project.id}`}
               aria-label={`${project.name[lang]} — ${t.projects.viewMore}`}
             >
-              {project.id === "starsay" ? (
-                <div className="phone-pair">
-                  <img
-                    src={asset("/covers/starsay/sim-galaxy.jpg")}
-                    alt={lang === "zh" ? "StarSay 银河" : "StarSay galaxy"}
-                    loading="eager"
-                  />
-                  <img
-                    src={asset("/covers/starsay/sim-stars.jpg")}
-                    alt={
-                      lang === "zh" ? "StarSay 星卡" : "StarSay memory cards"
-                    }
-                    loading="eager"
-                  />
-                </div>
-              ) : (
-                <img
-                  src={asset(
-                    project.id === "herduck"
-                      ? "/covers/herduck/agents-v2.jpg"
-                      : project.cover,
-                  )}
-                  alt={project.name[lang]}
-                  loading={index < 4 ? "eager" : "lazy"}
-                  width="640"
-                  height="400"
-                  style={{ objectFit: project.coverFit ?? "cover" }}
-                />
-              )}
+              <img
+                src={asset(project.cover)}
+                alt={project.name[lang]}
+                loading={index < 4 ? "eager" : "lazy"}
+                width="640"
+                height="400"
+                style={{ objectFit: project.coverFit ?? "cover" }}
+              />
             </Link>
             <div className="work-title">
               <h3>
