@@ -1,59 +1,126 @@
 import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { projects } from "../data/projects";
+import { caseStudies, featuredIds } from "../data/showcase";
 import { asset } from "../lib/asset";
 import { useLang } from "../hooks/useLang";
 
 export default function ProjectList() {
   const { t, lang } = useLang();
-
   return (
-    <section>
-      <h2 className="section-label mb-4">{t.projects.title}</h2>
-      <div className="hairline mb-8" />
-
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-x-7 sm:gap-y-10">
-        {projects.map((project, index) => {
-          const contain = project.coverFit === "contain";
-          const blurb = project.summary?.[lang] ?? project.description[lang];
-          return (
-            <li key={project.id}>
-              <Link
-                to={`/project/${project.id}`}
-                className="group block focus-visible:outline-none"
+    <>
+      <section
+        id="selected-work"
+        className="selected-work"
+        aria-labelledby="selected-title"
+      >
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">SELECTED WORK</p>
+            <h2 id="selected-title">{t.projects.title}</h2>
+          </div>
+          <p>{t.projects.subtitle}</p>
+        </div>
+        <div className="featured-list">
+          {featuredIds.map((id) => {
+            const project = projects.find((entry) => entry.id === id)!;
+            const story = caseStudies[id];
+            return (
+              <article
+                className={`featured-card featured-card--${id}`}
+                key={id}
               >
-                <div className="overflow-hidden rounded-[12px] bg-surface ring-1 ring-line-strong shadow-[0_1px_2px_rgba(20,20,19,0.04),0_10px_28px_rgba(20,20,19,0.05)]">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src={asset(project.cover)}
-                      alt={project.name[lang]}
-                      loading={index < 4 ? "eager" : "lazy"}
-                      fetchPriority={index < 2 ? "high" : "auto"}
-                      className={
-                        contain
-                          ? "h-full w-full object-contain bg-surface transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                          : "h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                      }
-                    />
+                <Link
+                  className="featured-image"
+                  to={`/project/${id}`}
+                  aria-label={`${project.name[lang]} — ${t.projects.viewMore}`}
+                >
+                  <img
+                    src={asset(project.cover)}
+                    alt={project.name[lang]}
+                    loading="lazy"
+                    width="1200"
+                    height="750"
+                  />
+                  <span className="image-link">
+                    <ArrowUpRight size={22} />
+                  </span>
+                </Link>
+                <div className="featured-copy">
+                  <div className="project-meta">
+                    <span>{story.category[lang]}</span>
+                    <span>{project.year}</span>
+                  </div>
+                  <h3>{project.name[lang]}</h3>
+                  <p className="project-headline">{story.headline[lang]}</p>
+                  <p className="project-intro">{story.intro[lang]}</p>
+                  <ul className="capabilities">
+                    {story.capabilities.map((label) => (
+                      <li key={label}>{label}</li>
+                    ))}
+                  </ul>
+                  <div className="project-actions">
+                    <Link className="text-link" to={`/project/${id}`}>
+                      {t.projects.viewMore}
+                      <ArrowRight size={16} />
+                    </Link>
+                    {project.href && (
+                      <a
+                        className="text-link secondary-link"
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.hrefLabel?.[lang] ?? t.projects.open}
+                        <ArrowUpRight size={15} />
+                      </a>
+                    )}
                   </div>
                 </div>
-                <div className="mt-3.5 px-0.5">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="text-[15px] sm:text-[16px] font-medium tracking-tight text-ink group-hover:text-accent transition-colors">
-                      {project.name[lang]}
-                    </h3>
-                    <span className="shrink-0 text-[12px] font-mono text-ink-mute tabular-nums">
-                      {project.year}
-                    </span>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+      <section className="experiments" aria-labelledby="experiments-title">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">SIDE QUESTS</p>
+            <h2 id="experiments-title">{t.projects.experiments}</h2>
+          </div>
+          <p>{t.projects.experimentsIntro}</p>
+        </div>
+        <div className="experiment-grid">
+          {projects
+            .filter((project) => !featuredIds.includes(project.id))
+            .map((project) => (
+              <Link
+                className="experiment-card"
+                key={project.id}
+                to={`/project/${project.id}`}
+              >
+                <div className="experiment-image">
+                  <img
+                    src={asset(project.cover)}
+                    alt=""
+                    loading="lazy"
+                    width="640"
+                    height="400"
+                    style={{ objectFit: project.coverFit ?? "cover" }}
+                  />
+                </div>
+                <div className="experiment-copy">
+                  <div>
+                    <h3>{project.name[lang]}</h3>
+                    <ArrowUpRight size={17} />
                   </div>
-                  <p className="mt-1 text-[13px] text-ink-dim leading-snug line-clamp-2">
-                    {blurb}
-                  </p>
+                  <p>{project.summary?.[lang] ?? project.description[lang]}</p>
+                  <span>{project.techStack.slice(0, 2).join(" / ")}</span>
                 </div>
               </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+            ))}
+        </div>
+      </section>
+    </>
   );
 }

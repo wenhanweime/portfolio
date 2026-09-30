@@ -2,16 +2,19 @@ import { useEffect } from "react";
 import Hero from "./Hero";
 import ProjectList from "./ProjectList";
 import WritingLinks from "./WritingLinks";
+import About from "./About";
+import { useLang } from "../hooks/useLang";
 
 export default function HomePage() {
+  const { t } = useLang();
   useEffect(() => {
-    document.title = "wenhan";
-  }, []);
-
+    document.title = t.hero.pageTitle;
+  }, [t]);
   return (
-    <main className="mt-16 sm:mt-20 space-y-20">
+    <main id="main-content" className="home">
       <Hero />
       <ProjectList />
+      <About />
       <WritingLinks />
     </main>
   );

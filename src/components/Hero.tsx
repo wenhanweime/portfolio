@@ -1,26 +1,62 @@
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Avatar from "./Avatar";
 import { useLang } from "../hooks/useLang";
+import Workbench from "./Workbench";
 
 export default function Hero() {
   const { t } = useLang();
-
   return (
-    <section>
-      <div className="flex items-center gap-5 mb-8">
-        <Avatar size={88} label={t.hero.name} />
-        <div className="min-w-0">
-          <h1 className="text-[1.5rem] sm:text-[1.75rem] leading-[1.1] font-semibold tracking-tight text-ink">
-            {t.hero.name}
-          </h1>
-          <div className="mt-2.5 text-[13px] text-ink-mute leading-[1.55] flex flex-col gap-1">
-            {t.hero.affiliation.map((line) => (
-              <p key={line} className="m-0">
-                {line}
-              </p>
-            ))}
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero-copy">
+        <div className="identity">
+          <Avatar size={52} label="wenhan" />
+          <div>
+            <span className="identity-name">wenhan</span>
+            <p>{t.hero.role}</p>
           </div>
         </div>
+        <h1 id="hero-title">
+          {t.hero.line1}
+          <br />
+          <span>{t.hero.line2}</span>
+        </h1>
+        <p className="hero-description">{t.hero.description}</p>
+        <div className="hero-actions">
+          <a
+            className="button button-primary"
+            href="#/"
+            onClick={(event) => {
+              event.preventDefault();
+              document
+                .getElementById("selected-work")
+                ?.scrollIntoView({
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
+                    ? "instant"
+                    : "smooth",
+                });
+            }}
+          >
+            {t.hero.explore}
+            <ArrowDown size={16} />
+          </a>
+          <a
+            className="text-link"
+            href="https://github.com/wenhanweime"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+            <ArrowUpRight size={16} />
+          </a>
+        </div>
+        <p className="hero-personal">
+          PKU · SCUT<span aria-hidden="true">/</span>
+          {t.hero.personal}
+        </p>
       </div>
+      <Workbench />
     </section>
   );
 }

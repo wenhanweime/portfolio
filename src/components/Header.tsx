@@ -1,25 +1,33 @@
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 import { useLang } from "../hooks/useLang";
 
 export default function Header() {
-  const { lang, toggleLang } = useLang();
-
+  const { lang, t, toggleLang } = useLang();
   return (
-    <header className="flex items-center justify-between gap-4">
-      <Link
-        to="/"
-        className="text-[15px] font-semibold tracking-tight text-ink hover:text-accent transition-colors"
-      >
-        wenhan
+    <header className="site-header">
+      <Link to="/" className="wordmark" aria-label={t.nav.home}>
+        wenhan<span aria-hidden="true">.</span>
       </Link>
-      <button
-        type="button"
-        onClick={toggleLang}
-        className="text-[13px] font-medium text-ink-mute hover:text-ink transition-colors px-1 py-1"
-        aria-label="Toggle language"
-      >
-        {lang === "zh" ? "EN" : "中文"}
-      </button>
+      <nav aria-label={t.nav.label}>
+        <a
+          className="header-github"
+          href="https://github.com/wenhanweime"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+          <ArrowUpRight size={14} />
+        </a>
+        <button
+          className="language-toggle"
+          type="button"
+          onClick={toggleLang}
+          aria-label={lang === "zh" ? "Switch to English" : "切换到中文"}
+        >
+          {lang === "zh" ? "EN" : "中文"}
+        </button>
+      </nav>
     </header>
   );
 }
