@@ -247,14 +247,14 @@ export const projects: Project[] = [
         "A2A：投放 Agent ↔ 创作者分身，不是人肉私信中介",
         "事件驱动订单流：匹配 → 出稿 → 审改 → 跟单",
         "灵感网络：全站创作者选题定时更新，策略分可嗅",
-        "在线规模：上万创作者分身与灵感帖可逛可撮合",
+        "创作者发现：分身主页与灵感推荐流",
       ],
       en: [
         "Digital clone: public profile → style / topics / value band",
         "A2A: brand agent ↔ creator twin—not human DM middlemen",
         "Event-driven order flow: match → draft → revise → follow-up",
         "Inspiration network: timed topic sparks across creators",
-        "Live scale: tens of thousands of twins and inspiration posts",
+        "Creator discovery: twin profiles and an inspiration feed",
       ],
     },
     year: "2025–",
@@ -282,7 +282,7 @@ export const projects: Project[] = [
     id: "particle-morph",
     name: { zh: "Particle Sky", en: "Particle Sky" },
     description: {
-      zh: "千万粒光点织成一片可触摸的夜空。从真实星云与星系取样布局，形态在呼吸间平滑切换；轻轻拖动，视差让星河微微侧倾。每周一帧 NASA 新图，星空又长出新的样子。",
+      zh: "粒粒光点织成一片可触摸的夜空。从真实星云与星系取样布局，形态在呼吸间平滑切换；轻轻拖动，视差让星河微微侧倾。每周一帧 NASA 新图，星空又长出新的样子。",
       en: "A sky woven from countless points of light. Layouts sampled from real nebulae and galaxies morph softly into one another; a gentle drag tilts the river of stars with light parallax. Each week a new NASA image arrives, and the sky grows another face.",
     },
     summary: {

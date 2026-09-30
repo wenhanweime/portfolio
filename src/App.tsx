@@ -17,13 +17,21 @@ function ScrollToTop() {
 
 function App() {
   const [lang, setLang] = useState<Lang>(() => {
-    return (localStorage.getItem("lang") as Lang) || "zh";
+    try {
+      return localStorage.getItem("lang") === "en" ? "en" : "zh";
+    } catch {
+      return "zh";
+    }
   });
 
   const toggleLang = useCallback(() => {
     setLang((prev) => {
       const next = prev === "zh" ? "en" : "zh";
-      localStorage.setItem("lang", next);
+      try {
+        localStorage.setItem("lang", next);
+      } catch {
+        /* Language still works without storage. */
+      }
       return next;
     });
   }, []);
@@ -37,12 +45,25 @@ function App() {
       value={{ lang, t: getTranslations(lang), toggleLang }}
     >
       <div className="min-h-screen bg-bg">
-        <div className="mx-auto w-full max-w-3xl px-6 sm:px-8 pt-10 pb-24">
+        <div className="site-shell">
+          <a
+            className="skip-link"
+            href="#main-content"
+            onClick={(event) => {
+              event.preventDefault();
+              const main = document.querySelector<HTMLElement>("main");
+              main?.setAttribute("tabindex", "-1");
+              main?.focus();
+            }}
+          >
+            {getTranslations(lang).nav.skip}
+          </a>
           <ScrollToTop />
           <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="*" element={<ProjectDetail />} />
           </Routes>
           <Footer />
         </div>
