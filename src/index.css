@@ -356,6 +356,19 @@
   object-fit: contain;
   border-radius: 6px;
 }
+.detail-narrative {
+  max-width: 750px;
+  margin: 36px 0;
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--color-ink-dim);
+}
+.detail-narrative p {
+  margin: 0;
+}
+.detail-narrative p + p {
+  margin-top: 18px;
+}
 .case-study {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -518,7 +531,8 @@
   .detail-subtitle {
     font-size: 18px;
   }
-  .detail-intro {
+  .detail-intro,
+  .detail-narrative {
     font-size: 14px;
   }
   .detail-cover {

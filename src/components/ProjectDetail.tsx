@@ -100,6 +100,7 @@ export default function ProjectDetail() {
   const hasProse = gallery.some((g) => g.kind === "prose");
 
   const story = caseStudies[project.id];
+  const paragraphs = story && "paragraphs" in story ? story.paragraphs : undefined;
   const nextProject =
     projects[(projects.indexOf(project) + 1) % projects.length];
   return (
@@ -116,7 +117,7 @@ export default function ProjectDetail() {
           <h1>{project.name[lang]}</h1>
           {story && <p className="detail-subtitle">{story.headline[lang]}</p>}
           <p className="detail-intro">
-            {story?.intro[lang] ?? project.description[lang]}
+            {story?.intro?.[lang] ?? project.description[lang]}
           </p>
           {project.href && (
             <a
@@ -137,7 +138,14 @@ export default function ProjectDetail() {
             fetchPriority="high"
           />
         </div>
-        {story && (
+        {paragraphs && (
+          <div className="detail-narrative">
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph.en}>{paragraph[lang]}</p>
+            ))}
+          </div>
+        )}
+        {story && "challenge" in story && (
           <section className="case-study" aria-label={t.projects.viewMore}>
             <div>
               <h2>{t.projects.challenge}</h2>
@@ -153,29 +161,31 @@ export default function ProjectDetail() {
             </div>
           </section>
         )}
-        <section className="detail-facts">
-          <div>
-            <h2>{t.projects.techStack}</h2>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs px-2 py-1 rounded bg-surface text-ink-dim"
-                >
-                  {tech}
-                </span>
-              ))}
+        {!paragraphs && (
+          <section className="detail-facts">
+            <div>
+              <h2>{t.projects.techStack}</h2>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-2 py-1 rounded bg-surface text-ink-dim"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div>
-            <h2>{t.projects.highlights}</h2>
-            <ul>
-              {project.highlights[lang].map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
+            <div>
+              <h2>{t.projects.highlights}</h2>
+              <ul>
+                {project.highlights[lang].map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
         {gallery.length > 0 && (
           <section className="detail-gallery">
             <h2>{t.projects.gallery}</h2>

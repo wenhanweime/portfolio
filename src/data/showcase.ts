@@ -1,15 +1,15 @@
 import type { Lang } from "../types";
 
 type Copy = Record<Lang, string>;
-export interface CaseStudy {
+export type CaseStudy = {
   category: Copy;
   headline: Copy;
-  intro: Copy;
-  challenge: Copy;
-  approach: Copy;
-  evidence: Copy;
+  intro?: Copy;
   capabilities: string[];
-}
+} & (
+  | { paragraphs: Copy[] }
+  | { challenge: Copy; approach: Copy; evidence: Copy }
+);
 
 // Editorial summaries of the existing project materials, not invented traction metrics.
 export const caseStudies: Record<string, CaseStudy> = {
@@ -70,25 +70,19 @@ export const caseStudies: Record<string, CaseStudy> = {
       en: "Agent product · Creator collaboration",
     },
     headline: {
-      zh: "让品牌与创作者的 AI 分身协作。",
-      en: "Put creator twins to work.",
+      zh: "帮创作者接洽合作的 AI 分身。",
+      en: "An AI counterpart for creator partnerships.",
     },
-    intro: {
-      zh: "把公开主页转成创作者分身，让品牌需求沿着匹配、出稿、审改、跟单流转。把多 Agent 协作落到具体业务里。",
-      en: "Turn public profiles into creator twins. Move a brand brief through matching, drafting, revisions, and follow-up.",
-    },
-    challenge: {
-      zh: "品牌需求和创作者信息分散，匹配之后还有沟通、出稿和反复修改。单次生成无法覆盖整个协作过程。",
-      en: "Brand briefs and creator information are fragmented. A match is only the start: drafting, revisions, and follow-up still need coordination.",
-    },
-    approach: {
-      zh: "从公开主页提取风格与话题，让品牌 Agent 和创作者分身进入事件驱动的订单流，按业务进展推进协作。",
-      en: "Extract style and topics from public profiles, then coordinate brand agents and creator twins through an event-driven order flow.",
-    },
-    evidence: {
-      zh: "可访问的产品站点与产品截图，展示创作者发现、推荐流和分身入口。",
-      en: "A public product site and screenshots showing creator discovery, recommendations, and the twin entry point.",
-    },
+    paragraphs: [
+      {
+        zh: "分身会参考创作者常写的话题和表达风格。品牌可以浏览创作者主页和推荐内容，寻找适合这次推广的人，再由双方的 Agent 围绕具体需求起草内容、处理修改意见。",
+        en: "Each counterpart draws on the creator’s usual topics and writing style. Brands can browse creator profiles and recommended content to find a fit. Agents on both sides then work with the brief to draft content and handle revisions.",
+      },
+      {
+        zh: "做这个项目时，我更感兴趣的是匹配之后的合作。所以我把出稿、修改和跟进放在同一笔订单里，有新需求或反馈时，再让 Agent 接着处理。这是我对 AI 参与日常商务协作的一次尝试。",
+        en: "What interests me most is what happens after a match. I kept drafts, revisions, and follow-up within the same order, with agents picking up the work when a new request or feedback arrives. RentKoa is my experiment in bringing AI into the day-to-day work of a partnership.",
+      },
+    ],
     capabilities: ["Multi-agent", "Google GenAI", "Cloudflare"],
   },
 };
