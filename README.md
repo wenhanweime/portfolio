@@ -1,10 +1,13 @@
-# wenhan · Independent builder
+# wenhan · Personal portfolio
 
-Bilingual portfolio built with React, TypeScript, and Vite. Three selected projects show developer tooling (Herduck), AI memory and interaction (StarSay), and creator collaboration (RentKoa). Five smaller projects remain accessible below them.
+Bilingual portfolio built with React, TypeScript, and Vite. A personal introduction sits alongside a compact collection of eight projects. Project notes preserve the technical case studies and galleries.
 
-- Current site: https://wenhanweime.github.io/portfolio/
-- V2 preview: https://wenhanweime.github.io/portfolio/previews/indie-builder-v2/
-- V2 branch: `feature/indie-builder-v2`
+- Production site: https://wenhanweime.github.io/portfolio/
+- Current production revision: https://wenhanweime.github.io/portfolio/version.json
+- Initial V3 release: `release/personal-portfolio-v3-20261001` (approved source `69c482b`)
+- V3 preview: https://wenhanweime.github.io/portfolio/previews/personal-portfolio-v3/
+- Previous V2 preview: https://wenhanweime.github.io/portfolio/previews/indie-builder-v2/
+- V3 branch: `feature/personal-portfolio-v3`
 - Previous source version: `baseline/pre-indie-builder-20260930` (`4b30641`)
 
 ## Local development
@@ -32,18 +35,18 @@ Keep claims grounded in available product materials. Do not introduce user count
 
 ## Version and publication strategy
 
-V2 branches from the last published source, `4b30641`, on `feature/project-covers`. Its review targets that branch so the redesign diff is readable. Existing redesign PRs and `main` are not part of this change.
+V3 branches from V2 (`b198da7`) on `feature/personal-portfolio-v3`. The user found V2 too much like a product landing page. V3 removes the pitch and product switcher, makes Wenhan the main subject, and presents projects as a compact collection. Its PR targets `feature/indie-builder-v2` for a focused comparison.
 
-The preview is deployed **only** to `gh-pages:previews/indie-builder-v2/`. The existing root production site is preserved. Source and deployment have separate Git histories; a preview contains `version.json` with its exact source revision.
+V3 was promoted to production on 2026-10-01. Both V2 and V3 previews remain available. The pre-promotion deployment is tagged `backup/production-before-v3-20261001`; original source is also tagged `baseline/pre-indie-builder-20260930`. See [the production release record](docs/releases/2026-10-01.md).
 
-Build for the isolated preview:
+Build this preview with:
 
 ```sh
-npm run build -- --base=/portfolio/previews/indie-builder-v2/
+npm run build -- --base=/portfolio/previews/personal-portfolio-v3/
 ```
 
-To update it, copy this build into that directory in a clean `gh-pages` worktree, commit, and push normally. Never replace the whole `gh-pages` root with the preview build. To retire the preview, remove only that preview directory in a new deployment commit. To revert source changes, use a new branch from the preserved baseline or revert the V2 commit; no history rewrite is needed.
+For preview updates, copy the build only into `gh-pages:previews/personal-portfolio-v3/`, add a `version.json` identifying the source commit, then commit and push.
 
-A production promotion should build with the default `/portfolio/` base and preserve any preview directories. The V2 preview is a separate reviewable release, not a replacement of production.
+For an approved production release, build with `npm run build -- --base=/portfolio/` and copy the result into the `gh-pages` root while preserving `previews/` and previous hashed assets. Record the source commit in root `version.json`, tag the previous deployment, and push a new deployment commit. Roll back with a revert commit; no force push is needed.
 
-See [the V2 design and validation notes](docs/indie-builder-v2.md).
+See [V3 notes](docs/personal-portfolio-v3.md) and [the previous V2 notes](docs/indie-builder-v2.md).

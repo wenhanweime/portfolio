@@ -1,15 +1,15 @@
 import type { Lang } from "../types";
 
 type Copy = Record<Lang, string>;
-export interface CaseStudy {
+export type CaseStudy = {
   category: Copy;
   headline: Copy;
-  intro: Copy;
-  challenge: Copy;
-  approach: Copy;
-  evidence: Copy;
+  intro?: Copy;
   capabilities: string[];
-}
+} & (
+  | { paragraphs: Copy[] }
+  | { challenge: Copy; approach: Copy; evidence: Copy }
+);
 
 // Editorial summaries of the existing project materials, not invented traction metrics.
 export const caseStudies: Record<string, CaseStudy> = {
@@ -70,26 +70,14 @@ export const caseStudies: Record<string, CaseStudy> = {
       en: "Agent product · Creator collaboration",
     },
     headline: {
-      zh: "让品牌与创作者的 AI 分身协作。",
-      en: "Put creator twins to work.",
+      zh: "用 AI 协助创作者接洽推广合作。",
+      en: "AI for small creator partnerships.",
     },
     intro: {
-      zh: "把公开主页转成创作者分身，让品牌需求沿着匹配、出稿、审改、跟单流转。把多 Agent 协作落到具体业务里。",
-      en: "Turn public profiles into creator twins. Move a brand brief through matching, drafting, revisions, and follow-up.",
+      zh: "我自己在小红书上接过推广。一单只有一两百元，也可能要花三五天沟通选题、报价和稿件。所以我做了 RentKoa，尝试让品牌和创作者各自的 Agent 帮忙找人、谈合作、准备内容。",
+      en: "I have taken on small Xiaohongshu partnerships myself. Even a modest fee could mean days of discussing topics, pricing, and drafts. RentKoa grew out of that experience: agents on both sides help find creators, discuss a collaboration, and prepare content.",
     },
-    challenge: {
-      zh: "品牌需求和创作者信息分散，匹配之后还有沟通、出稿和反复修改。单次生成无法覆盖整个协作过程。",
-      en: "Brand briefs and creator information are fragmented. A match is only the start: drafting, revisions, and follow-up still need coordination.",
-    },
-    approach: {
-      zh: "从公开主页提取风格与话题，让品牌 Agent 和创作者分身进入事件驱动的订单流，按业务进展推进协作。",
-      en: "Extract style and topics from public profiles, then coordinate brand agents and creator twins through an event-driven order flow.",
-    },
-    evidence: {
-      zh: "可访问的产品站点与产品截图，展示创作者发现、推荐流和分身入口。",
-      en: "A public product site and screenshots showing creator discovery, recommendations, and the twin entry point.",
-    },
+    paragraphs: [],
     capabilities: ["Multi-agent", "Google GenAI", "Cloudflare"],
   },
 };
-export const featuredIds = ["herduck", "starsay", "rentkoa"];

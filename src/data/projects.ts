@@ -39,7 +39,7 @@ export const projects: Project[] = [
       en: "The persistent work layer for Agents — keep Goal, Status, Blocker, and Next Steps whole across sessions and tools, so work stays ready to continue.",
     },
     summary: {
-      zh: "Agent 的持久工作层",
+      zh: "面向 Agent 的持续工作层",
       en: "The persistent work layer for Agents",
     },
     techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
@@ -74,8 +74,8 @@ export const projects: Project[] = [
       en: "Your mind holds a whole universe. StarSay is not another chat box—the main loop keeps the feel light, while a side-path Memory agent every few turns decides what is worth keeping. Daily dreaming compacts fragments into self-knowledge; the Awareness Feed gathers thoughts and feelings; Stars turn insights into cards you can revisit. Memory stops being a black-box vector and becomes something you can see. Ask anything. A star is born. Carry your inner universe on the home screen.",
     },
     summary: {
-      zh: "把记忆长成看得见的宇宙",
-      en: "Memory that grows into a visible universe",
+      zh: "用星卡和像素星球记录对话与觉察的 AI 应用",
+      en: "An AI memory app with star cards and pixel planets",
     },
     techStack: [
       "React",
@@ -226,55 +226,34 @@ export const projects: Project[] = [
     id: "rentkoa",
     name: { zh: "RentKoa", en: "RentKoa" },
     description: {
-      zh: "KOA = KOL + Agent。把创作者公开主页蒸馏成可协作的 AI 分身，品牌投放 Agent 与创作者分身在事件驱动的订单流里撮合、出稿、审改、跟单——稀疏身份也能跑通多方协作，而不是常驻大 loop 烧资源。",
-      en: "KOA = KOL + Agent. Distill a creator's public profile into a workable AI twin; brand agents and creator twins match, draft, revise, and follow orders on an event-driven flow—sparse identity, multi-party collaboration, without a forever ReAct loop.",
+      zh: "RentKoa 是我做的品牌与创作者合作平台。品牌填写推广需求，寻找合适的创作者；创作者上传主页截图，创建了解自己账号和报价的 AI 分身，协助沟通。平台也提供邀约跟进和内容起草工具。",
+      en: "I built RentKoa as a place for brands and creators to work together. Brands bring a campaign brief; creators turn their public profiles into AI counterparts that help discuss the brief and draft content.",
     },
     summary: {
-      zh: "AI 分身撮合品牌与创作者",
-      en: "AI twins that match brands with creators",
+      zh: "帮创作者接洽品牌合作的 AI 分身",
+      en: "AI counterparts that help creators work with brands",
     },
     techStack: [
       "React",
       "TypeScript",
       "Tailwind CSS",
       "Google GenAI",
-      "Multi-Agent",
       "Cloudflare",
     ],
     highlights: {
       zh: [
-        "Digital clone：公开主页 → 风格 / 话题 / 价值画像",
-        "A2A：投放 Agent ↔ 创作者分身，不是人肉私信中介",
-        "事件驱动订单流：匹配 → 出稿 → 审改 → 跟单",
-        "灵感网络：全站创作者选题定时更新，策略分可嗅",
-        "创作者发现：分身主页与灵感推荐流",
+        "从公开主页提取创作者的话题与表达风格",
+        "浏览创作者主页和推荐内容，寻找合作对象",
+        "双方的 Agent 参与内容起草、修改和订单跟进",
       ],
       en: [
-        "Digital clone: public profile → style / topics / value band",
-        "A2A: brand agent ↔ creator twin—not human DM middlemen",
-        "Event-driven order flow: match → draft → revise → follow-up",
-        "Inspiration network: timed topic sparks across creators",
-        "Creator discovery: twin profiles and an inspiration feed",
+        "Build a picture of a creator’s topics and style from their public profile",
+        "Browse creator profiles and recommended content to find a collaborator",
+        "Agents help with drafts, revisions, and order follow-up",
       ],
     },
     year: "2025–",
     cover: "/covers/rentkoa.jpg",
-    gallery: [
-      {
-        src: "/covers/rentkoa.jpg",
-        caption: {
-          zh: "主页 · AI 分身撮合品牌与创作者，吸金榜与推荐流",
-          en: "Home · AI twins matching brands and creators, earnings board and feed",
-        },
-      },
-      {
-        src: "/covers/rentkoa-hero.jpg",
-        caption: {
-          zh: "产品叙事页 · 一键推广 / 截图生成分身接单",
-          en: "Product narrative · one-click promote / screenshot-to-twin onboard",
-        },
-      },
-    ],
     href: "https://www.rentkoa.xyz",
     hrefLabel: { zh: "打开站点", en: "Open site" },
   },
