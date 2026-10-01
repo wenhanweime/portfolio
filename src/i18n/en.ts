@@ -36,13 +36,5 @@ export const en = {
     next: "Next project",
     details: "About the product",
   },
-  writing: {
-    title: "Writing & research",
-    stockDaily: {
-      label: "US Stock Daily",
-      blurb:
-        "My automated research desk: daily observations and deeper notes on companies and supply chains. Research only, not advice.",
-    },
-  },
   footer: { built: "A few projects. An ongoing curiosity." },
 };

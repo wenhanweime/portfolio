@@ -31,13 +31,5 @@ export const zh = {
     next: "下一个作品",
     details: "产品介绍",
   },
-  writing: {
-    title: "写作与研究",
-    stockDaily: {
-      label: "US Stock Daily",
-      blurb:
-        "我的自动化研究站：每日观察、个股与产业链笔记。仅供研究，非投资建议。",
-    },
-  },
   footer: { built: "一些作品，一点好奇心。" },
 };

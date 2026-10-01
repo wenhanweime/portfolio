@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Hero from "./Hero";
 import ProjectList from "./ProjectList";
-import WritingLinks from "./WritingLinks";
 import { useLang } from "../hooks/useLang";
 
 export default function HomePage() {
@@ -14,7 +13,6 @@ export default function HomePage() {
       <Hero />
       <div className="portfolio-content">
         <ProjectList />
-        <WritingLinks />
       </div>
     </main>
   );
