@@ -1,7 +1,7 @@
 {
-  "sourceCommit": "5844287b60dce104f1dd6b2c5a4961a73e4dc2a8",
+  "sourceCommit": "b5073967bd5afbf4cf92ab8ec0c8b86f133e6380",
   "sourceBranch": "feature/personal-portfolio-v3",
-  "releaseTag": "release/portfolio-5844287",
-  "previousDeployment": "f58191835f17b41504098f48097c62adf0800077",
-  "deployedAt": "2026-10-01T09:41:12.606008+00:00"
+  "releaseTag": "release/portfolio-b507396",
+  "previousDeployment": "33b469c1cb552c56f2fb83abeada5c3ad22df8cd",
+  "deployedAt": "2026-10-01T13:47:39.212165+00:00"
 }
