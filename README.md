@@ -3,7 +3,8 @@
 Bilingual portfolio built with React, TypeScript, and Vite. A personal introduction sits alongside a compact collection of eight projects. Project notes preserve the technical case studies and galleries.
 
 - Production site: https://wenhanweime.github.io/portfolio/
-- Production release: `release/personal-portfolio-v3-20261001` (approved source `69c482b`)
+- Current production revision: https://wenhanweime.github.io/portfolio/version.json
+- Initial V3 release: `release/personal-portfolio-v3-20261001` (approved source `69c482b`)
 - V3 preview: https://wenhanweime.github.io/portfolio/previews/personal-portfolio-v3/
 - Previous V2 preview: https://wenhanweime.github.io/portfolio/previews/indie-builder-v2/
 - V3 branch: `feature/personal-portfolio-v3`

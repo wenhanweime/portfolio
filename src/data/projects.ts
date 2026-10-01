@@ -39,8 +39,8 @@ export const projects: Project[] = [
       en: "The persistent work layer for Agents — keep Goal, Status, Blocker, and Next Steps whole across sessions and tools, so work stays ready to continue.",
     },
     summary: {
-      zh: "把 Agent 窗口、项目和会话放到一起的工作台",
-      en: "A workspace for agent windows, projects, and sessions",
+      zh: "面向 Agent 的持续工作层",
+      en: "The persistent work layer for Agents",
     },
     techStack: ["Rust", "Zig", "TypeScript", "Node.js", "Terminal UI"],
     highlights: {
