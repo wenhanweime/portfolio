@@ -70,11 +70,11 @@ export const caseStudies: Record<string, CaseStudy> = {
       en: "Agent product · Creator collaboration",
     },
     headline: {
-      zh: "让 AI 参与小额内容合作。",
+      zh: "用 AI 协助创作者接洽推广合作。",
       en: "AI for small creator partnerships.",
     },
     intro: {
-      zh: "我自己接过小红书的推广合作。一两百元的单子，也可能花三五天沟通选题、报价和稿件。RentKoa 就从这件事出发，让品牌和创作者各自的 Agent 参与找人、谈合作和准备内容。",
+      zh: "我自己在小红书上接过推广。一单只有一两百元，也可能要花三五天沟通选题、报价和稿件。所以我做了 RentKoa，尝试让品牌和创作者各自的 Agent 帮忙找人、谈合作、准备内容。",
       en: "I have taken on small Xiaohongshu partnerships myself. Even a modest fee could mean days of discussing topics, pricing, and drafts. RentKoa grew out of that experience: agents on both sides help find creators, discuss a collaboration, and prepare content.",
     },
     paragraphs: [],

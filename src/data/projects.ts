@@ -226,7 +226,7 @@ export const projects: Project[] = [
     id: "rentkoa",
     name: { zh: "RentKoa", en: "RentKoa" },
     description: {
-      zh: "RentKoa 是我做的一个品牌与创作者合作平台。品牌带着推广需求来找人，创作者则用自己的公开主页生成 AI 分身，让它参与需求沟通和内容起草。",
+      zh: "RentKoa 是我做的品牌与创作者合作平台。品牌填写推广需求，寻找合适的创作者；创作者上传主页截图，创建了解自己账号和报价的 AI 分身，协助沟通。平台也提供邀约跟进和内容起草工具。",
       en: "I built RentKoa as a place for brands and creators to work together. Brands bring a campaign brief; creators turn their public profiles into AI counterparts that help discuss the brief and draft content.",
     },
     summary: {
