@@ -254,22 +254,6 @@ export const projects: Project[] = [
     },
     year: "2025–",
     cover: "/covers/rentkoa.jpg",
-    gallery: [
-      {
-        src: "/covers/rentkoa.jpg",
-        caption: {
-          zh: "创作者主页与内容推荐",
-          en: "Creator profiles and content recommendations",
-        },
-      },
-      {
-        src: "/covers/rentkoa-hero.jpg",
-        caption: {
-          zh: "品牌发布需求、创作者创建分身的入口",
-          en: "Getting started with a brand brief or a creator counterpart",
-        },
-      },
-    ],
     href: "https://www.rentkoa.xyz",
     hrefLabel: { zh: "打开站点", en: "Open site" },
   },

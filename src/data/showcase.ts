@@ -70,19 +70,14 @@ export const caseStudies: Record<string, CaseStudy> = {
       en: "Agent product · Creator collaboration",
     },
     headline: {
-      zh: "帮创作者接洽合作的 AI 分身。",
-      en: "An AI counterpart for creator partnerships.",
+      zh: "让 AI 参与小额内容合作。",
+      en: "AI for small creator partnerships.",
     },
-    paragraphs: [
-      {
-        zh: "分身会参考创作者常写的话题和表达风格。品牌可以浏览创作者主页和推荐内容，寻找适合这次推广的人，再由双方的 Agent 围绕具体需求起草内容、处理修改意见。",
-        en: "Each counterpart draws on the creator’s usual topics and writing style. Brands can browse creator profiles and recommended content to find a fit. Agents on both sides then work with the brief to draft content and handle revisions.",
-      },
-      {
-        zh: "做这个项目时，我更感兴趣的是匹配之后的合作。所以我把出稿、修改和跟进放在同一笔订单里，有新需求或反馈时，再让 Agent 接着处理。这是我对 AI 参与日常商务协作的一次尝试。",
-        en: "What interests me most is what happens after a match. I kept drafts, revisions, and follow-up within the same order, with agents picking up the work when a new request or feedback arrives. RentKoa is my experiment in bringing AI into the day-to-day work of a partnership.",
-      },
-    ],
+    intro: {
+      zh: "我自己接过小红书的推广合作。一两百元的单子，也可能花三五天沟通选题、报价和稿件。RentKoa 就从这件事出发，让品牌和创作者各自的 Agent 参与找人、谈合作和准备内容。",
+      en: "I have taken on small Xiaohongshu partnerships myself. Even a modest fee could mean days of discussing topics, pricing, and drafts. RentKoa grew out of that experience: agents on both sides help find creators, discuss a collaboration, and prepare content.",
+    },
+    paragraphs: [],
     capabilities: ["Multi-agent", "Google GenAI", "Cloudflare"],
   },
 };

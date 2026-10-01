@@ -5,6 +5,7 @@ import { projects, getProject, type GalleryItem } from "../data/projects";
 import { caseStudies } from "../data/showcase";
 import { asset } from "../lib/asset";
 import { useLang } from "../hooks/useLang";
+import RentkoaGuide from "./RentkoaGuide";
 
 function GalleryBlock({
   item,
@@ -96,6 +97,7 @@ export default function ProjectDetail() {
     );
   }
 
+  const hasCapabilityGuide = project.id === "rentkoa";
   const gallery = project.gallery ?? [];
   const hasProse = gallery.some((g) => g.kind === "prose");
 
@@ -131,14 +133,17 @@ export default function ProjectDetail() {
             </a>
           )}
         </header>
-        <div className="detail-cover">
-          <img
-            src={asset(project.cover)}
-            alt={project.name[lang]}
-            fetchPriority="high"
-          />
-        </div>
-        {paragraphs && (
+        {hasCapabilityGuide && <RentkoaGuide lang={lang} />}
+        {!hasCapabilityGuide && (
+          <div className="detail-cover">
+            <img
+              src={asset(project.cover)}
+              alt={project.name[lang]}
+              fetchPriority="high"
+            />
+          </div>
+        )}
+        {paragraphs && !hasCapabilityGuide && (
           <div className="detail-narrative">
             {paragraphs.map((paragraph) => (
               <p key={paragraph.en}>{paragraph[lang]}</p>
@@ -186,7 +191,7 @@ export default function ProjectDetail() {
             </div>
           </section>
         )}
-        {gallery.length > 0 && (
+        {gallery.length > 0 && !hasCapabilityGuide && (
           <section className="detail-gallery">
             <h2>{t.projects.gallery}</h2>
             {hasProse ? (
